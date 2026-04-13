@@ -424,6 +424,14 @@ img {
   color: var(--text-mid);
 }
 
+.service-card__icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 14px;
+  border-radius: var(--radius-sm);
+}
+
 .service-card a {
   display: inline-block;
   margin-top: 14px;

@@ -609,3 +609,26 @@ img {
     font-size: 14px;
   }
 }
+
+
+.header__brand-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.header__logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.review-card__name {
+  display: block;
+  margin-top: 14px;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-style: normal;
+  font-weight: 700;
+}

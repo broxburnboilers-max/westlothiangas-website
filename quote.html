@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Boiler Quote | West Lothian Gas — Gas Safe Engineer Broxburn</title>
+  <meta name="description" content="Get a free, no-obligation quote from a Gas Safe registered local gas engineer covering West Lothian, Broxburn, Livingston and Edinburgh. Boiler repairs, installs and landlord gas safety certificates. Call 07961 768920." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Quote landing page specific styles */
+    .quote-hero {
+      background: linear-gradient(135deg, #0a3d62 0%, #1e5a8a 100%);
+      color: #fff;
+      padding: 48px 20px 32px;
+    }
+    .quote-hero__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .quote-hero__eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .quote-hero__title {
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+    .quote-hero__sub {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      margin: 0 0 24px;
+      opacity: 0.95;
+    }
+    .quote-hero__ticks {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 20px;
+    }
+    .quote-hero__ticks li {
+      position: relative;
+      padding-left: 28px;
+      font-size: 0.95rem;
+    }
+    .quote-hero__ticks li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background: #2ecc71;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .quote-hero__cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .quote-cta-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #2ecc71;
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(46,204,113,0.3);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .quote-cta-call:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(46,204,113,0.4); }
+    .quote-cta-call .phone-icon {
+      width: 22px; height: 22px; background: rgba(255,255,255,0.25);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+    }
+    .quote-cta-form {
+      display: inline-flex; align-items: center;
+      background: #fff; color: #0a3d62;
+      padding: 14px 22px; border-radius: 8px;
+      font-weight: 700; font-size: 1rem;
+      text-decoration: none;
+    }
+
+    /* Form card */
+    .quote-form-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      color: #222;
+    }
+    .quote-form-card h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.4rem;
+      margin: 0 0 6px;
+      color: #0a3d62;
+    }
+    .quote-form-card p.intro { margin: 0 0 18px; color: #555; font-size: 0.95rem; }
+    .form-row { margin-bottom: 14px; }
+    .form-row label {
+      display: block; font-weight: 600; font-size: 0.9rem;
+      margin-bottom: 6px; color: #333;
+    }
+    .form-row input, .form-row select, .form-row textarea {
+      width: 100%; padding: 11px 14px;
+      border: 1px solid #d0d6dc; border-radius: 6px;
+      font-size: 1rem; font-family: inherit;
+      box-sizing: border-box;
+    }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+      outline: none; border-color: #1e5a8a;
+      box-shadow: 0 0 0 3px rgba(30,90,138,0.15);
+    }
+    .form-row textarea { resize: vertical; min-height: 80px; }
+    .form-submit {
+      width: 100%; background: #e74c3c; color: #fff;
+      border: 0; padding: 14px; border-radius: 8px;
+      font-size: 1.05rem; font-weight: 700;
+      cursor: pointer; transition: background 0.15s;
+    }
+    .form-submit:hover { background: #c0392b; }
+    .form-disclaimer { font-size: 0.8rem; color: #777; text-align: center; margin: 12px 0 0; }
+
+    /* Trust strip */
+    .trust-strip {
+      background: #f5f7fa;
+      padding: 28px 20px;
+      border-bottom: 1px solid #e1e6eb;
+    }
+    .trust-strip__inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; justify-content: space-around;
+      align-items: center; gap: 24px;
+    }
+    .trust-item {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; flex: 1; min-width: 140px;
+    }
+    .trust-item__icon {
+      font-size: 2rem; margin-bottom: 6px;
+    }
+    .trust-item__title { font-weight: 700; color: #0a3d62; font-size: 0.95rem; }
+    .trust-item__sub { font-size: 0.8rem; color: #666; margin-top: 2px; }
+
+    /* Services list */
+    .services-block {
+      max-width: 1100px; margin: 0 auto;
+      padding: 48px 20px;
+    }
+    .services-block h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.6rem; color: #0a3d62;
+      text-align: center; margin: 0 0 8px;
+    }
+    .services-block .lead {
+      text-align: center; color: #555;
+      max-width: 640px; margin: 0 auto 32px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .service-card-mini {
+      background: #fff; border: 1px solid #e1e6eb;
+      border-radius: 10px; padding: 20px; text-align: center;
+    }
+    .service-card-mini h3 {
+      font-size: 1rem; margin: 8px 0 4px; color: #0a3d62;
+    }
+    .service-card-mini p { font-size: 0.85rem; color: #666; margin: 0; }
+    .service-card-mini__icon { font-size: 2rem; }
+
+    /* Reviews */
+    .reviews-block {
+      background: #f5f7fa;
+      padding: 48px 20px;
+    }
+    .reviews-block__inner {
+      max-width: 1100px; margin: 0 auto;
+    }
+    .reviews-block h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.6rem; color: #0a3d62;
+      text-align: center; margin: 0 0 28px;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .review-card {
+      background: #fff; padding: 22px; border-radius: 10px;
+      border-left: 4px solid #2ecc71;
+    }
+    .review-stars { color: #f39c12; font-size: 1.05rem; margin-bottom: 8px; }
+    .review-text { color: #444; font-style: italic; margin: 0 0 10px; font-size: 0.95rem; }
+    .review-author { color: #888; font-size: 0.85rem; font-weight: 600; }
+
+    /* Final CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #0a3d62 0%, #1e5a8a 100%);
+      color: #fff; padding: 48px 20px; text-align: center;
+    }
+    .final-cta h2 {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.8rem; margin: 0 0 12px;
+    }
+    .final-cta p { margin: 0 0 24px; opacity: 0.95; }
+
+    /* Sticky mobile call bar */
+    .sticky-call {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: #2ecc71; color: #fff;
+      padding: 14px; text-align: center;
+      font-weight: 700; font-size: 1.05rem;
+      text-decoration: none; z-index: 999;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .quote-hero__inner { grid-template-columns: 1fr; gap: 24px; }
+      .quote-hero { padding: 32px 16px; }
+      .quote-hero__ticks { grid-template-columns: 1fr; }
+      .sticky-call { display: block; }
+      body { padding-bottom: 60px; }
+    }
+
+    /* Simple footer */
+    .quote-footer {
+      background: #1a1a1a; color: #ccc;
+      padding: 28px 20px; text-align: center;
+      font-size: 0.85rem;
+    }
+    .quote-footer a { color: #fff; text-decoration: none; margin: 0 8px; }
+
+    /* Header simplification on landing page */
+    .lp-header {
+      background: #fff; border-bottom: 1px solid #e1e6eb;
+      padding: 14px 20px;
+    }
+    .lp-header__inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .lp-header__brand {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: #0a3d62;
+    }
+    .lp-header__logo { height: 48px; width: auto; }
+    .lp-header__name {
+      font-family: 'Lato', sans-serif; font-weight: 900;
+      font-size: 1.05rem;
+    }
+    .lp-header__phone {
+      background: #2ecc71; color: #fff;
+      padding: 10px 18px; border-radius: 6px;
+      font-weight: 700; text-decoration: none;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 480px) {
+      .lp-header__name { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Simplified header focused on conversion -->
+  <header class="lp-header">
+    <div class="lp-header__inner">
+      <a href="/" class="lp-header__brand">
+        <img src="assets/FullLogo_Transparent_NoBuffer.jpg" alt="West Lothian Gas" class="lp-header__logo" />
+        <span class="lp-header__name">West Lothian Gas</span>
+      </a>
+      <a href="tel:07961768920" class="lp-header__phone">📞 07961 768920</a>
+    </div>
+  </header>
+
+  <!-- Hero with form -->
+  <section class="quote-hero">
+    <div class="quote-hero__inner">
+      <div>
+        <span class="quote-hero__eyebrow">West Lothian • Edinburgh • Falkirk</span>
+        <h1 class="quote-hero__title">Local Gas Safe Engineer in West Lothian — Free Quote in 60 Seconds</h1>
+        <p class="quote-hero__sub">
+          Family-run, Gas Safe registered. Boiler repairs, new installs and landlord safety certificates across Broxburn, Livingston, Bathgate and surrounding areas. Honest pricing, no call-out fee.
+        </p>
+        <ul class="quote-hero__ticks">
+          <li>Gas Safe registered (No. 658404)</li>
+          <li>Worcester Bosch accredited</li>
+          <li>Same-day repairs available</li>
+          <li>12-year warranties on new boilers</li>
+          <li>Fixed price quotes</li>
+          <li>Fully insured</li>
+        </ul>
+        <div class="quote-hero__cta-row">
+          <a href="tel:07961768920" class="quote-cta-call" onclick="trackCall()">
+            <span class="phone-icon">📞</span>
+            Call 07961 768920
+          </a>
+          <a href="#quote-form" class="quote-cta-form">Get Online Quote →</a>
+        </div>
+      </div>
+
+      <div class="quote-form-card" id="quote-form">
+        <h2>Get Your Free Quote</h2>
+        <p class="intro">No obligation. We reply within 1 working hour.</p>
+        <form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" method="POST" id="quoteForm">
+          <input type="hidden" name="_subject" value="New quote request — West Lothian Gas" />
+          <div class="form-row">
+            <label for="name">Your name *</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone number *</label>
+            <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="07..." />
+          </div>
+          <div class="form-row">
+            <label for="postcode">Postcode *</label>
+            <input type="text" id="postcode" name="postcode" required autocomplete="postal-code" placeholder="EH52..." />
+          </div>
+          <div class="form-row">
+            <label for="service">What do you need? *</label>
+            <select id="service" name="service" required>
+              <option value="">— Choose a service —</option>
+              <option>Boiler repair</option>
+              <option>New boiler / replacement</option>
+              <option>Boiler service</option>
+              <option>Landlord gas safety certificate (CP12)</option>
+              <option>Hob or cooker install</option>
+              <option>Other heating work</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">Brief description (optional)</label>
+            <textarea id="message" name="message" placeholder="e.g. Boiler losing pressure overnight"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Get My Free Quote</button>
+          <p class="form-disclaimer">Or call us now on <a href="tel:07961768920" style="color:#0a3d62;font-weight:700;">07961 768920</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="trust-strip">
+    <div class="trust-strip__inner">
+      <div class="trust-item">
+        <div class="trust-item__icon">✅</div>
+        <div class="trust-item__title">Gas Safe Registered</div>
+        <div class="trust-item__sub">Reg. No. 658404</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__icon">⭐</div>
+        <div class="trust-item__title">5-Star Rated</div>
+        <div class="trust-item__sub">Trusted by local families</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__icon">🛡️</div>
+        <div class="trust-item__title">Fully Insured</div>
+        <div class="trust-item__sub">Public liability cover</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__icon">🔧</div>
+        <div class="trust-item__title">Worcester Accredited</div>
+        <div class="trust-item__sub">12-yr warranty installer</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item__icon">📍</div>
+        <div class="trust-item__title">Local & Family-Run</div>
+        <div class="trust-item__sub">Based in Broxburn EH52</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services-block">
+    <h2>What We Do</h2>
+    <p class="lead">All work carried out by a Gas Safe registered engineer with clear, fixed-price quotes before we start.</p>
+    <div class="services-grid">
+      <div class="service-card-mini">
+        <div class="service-card-mini__icon">🔥</div>
+        <h3>Boiler Repairs</h3>
+        <p>Same-day diagnosis, no call-out fee.</p>
+      </div>
+      <div class="service-card-mini">
+        <div class="service-card-mini__icon">🆕</div>
+        <h3>New Boiler Installs</h3>
+        <p>From £1,895 fitted. Up to 12-yr warranty.</p>
+      </div>
+      <div class="service-card-mini">
+        <div class="service-card-mini__icon">🛠️</div>
+        <h3>Boiler Servicing</h3>
+        <p>Annual service from £75 inc. report.</p>
+      </div>
+      <div class="service-card-mini">
+        <div class="service-card-mini__icon">📋</div>
+        <h3>Landlord CP12</h3>
+        <p>Gas safety certs from £75, same-day email.</p>
+      </div>
+      <div class="service-card-mini">
+        <div class="service-card-mini__icon">🍳</div>
+        <h3>Hob & Cooker Installs</h3>
+        <p>Gas hob and cooker fitting and certifying.</p>
+      </div>
+      <div class="service-card-mini">
+        <div class="service-card-mini__icon">🌡️</div>
+        <h3>Heating Repairs</h3>
+        <p>Radiators, pumps, thermostats, leaks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews-block">
+    <div class="reviews-block__inner">
+      <h2>What Our Customers Say</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Quick response, sorted our boiler the same day. Fair price and explained everything clearly. Highly recommend."</p>
+          <div class="review-author">— Sarah M., Livingston</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Did our landlord gas safety cert with no fuss. Certificate emailed the same afternoon. Will use again."</p>
+          <div class="review-author">— David R., Broxburn</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"New combi installed in a day. Tidy work, fixed-price quote, no surprises. Worcester boiler with 12-yr warranty."</p>
+          <div class="review-author">— Karen T., Bathgate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2>Ready for Your Free Quote?</h2>
+    <p>Call now and speak to a real engineer — or send your details and we'll come back within an hour.</p>
+    <a href="tel:07961768920" class="quote-cta-call" style="background:#2ecc71;">
+      <span class="phone-icon">📞</span> Call 07961 768920
+    </a>
+  </section>
+
+  <footer class="quote-footer">
+    <p>West Lothian Gas — Broxburn, EH52 6FB — <a href="tel:07961768920">07961 768920</a> — <a href="mailto:westlothiangas@gmail.com">westlothiangas@gmail.com</a></p>
+    <p style="margin-top:8px;opacity:0.6;">Gas Safe Registered Engineer • Fully Insured • &copy; West Lothian Gas</p>
+  </footer>
+
+  <!-- Sticky mobile call button -->
+  <a href="tel:07961768920" class="sticky-call" onclick="trackCall()">📞 Tap to Call — 07961 768920</a>
+
+  <script>
+    // Lightweight conversion-friendly call tracking hook (works with gtag if present)
+    function trackCall() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'phone_call_click', { 'event_category': 'engagement', 'event_label': 'quote_page' });
+      }
+    }
+  </script>
+</body>
+</html>

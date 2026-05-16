@@ -10,6 +10,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "West Lothian Gas",
+    "image": "https://westlothiangas.com/assets/FullLogo_Transparent_NoBuffer.jpg",
+    "url": "https://westlothiangas.com/quote",
+    "telephone": "+44 131 581 8509",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Broxburn",
+      "postalCode": "EH52 6FB",
+      "addressRegion": "West Lothian",
+      "addressCountry": "GB"
+    },
+    "areaServed": ["West Lothian", "Edinburgh", "Falkirk", "Broxburn", "Livingston", "Bathgate"],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+44 131 581 8509",
+      "contactType": "customer service",
+      "areaServed": "GB",
+      "availableLanguage": "en"
+    }]
+  }
+  </script>
   <style>
     /* Quote landing page specific styles */
     .quote-hero {
@@ -301,7 +326,7 @@
         <img src="assets/FullLogo_Transparent_NoBuffer.jpg" alt="West Lothian Gas" class="lp-header__logo" />
         <span class="lp-header__name">West Lothian Gas</span>
       </a>
-      <a href="tel:01315818509" class="lp-header__phone">📞 0131 581 8509</a>
+      <a href="tel:+441315818509" class="lp-header__phone" onclick="trackCall()" aria-label="Call West Lothian Gas on 0131 581 8509 (international +44 131 581 8509)">📞 0131 581 8509</a>
     </div>
   </header>
 
@@ -323,12 +348,15 @@
           <li>Fully insured</li>
         </ul>
         <div class="quote-hero__cta-row">
-          <a href="tel:01315818509" class="quote-cta-call" onclick="trackCall()">
+          <a href="tel:+441315818509" class="quote-cta-call" onclick="trackCall()" aria-label="Call 0131 581 8509 (international +44 131 581 8509)">
             <span class="phone-icon">📞</span>
             Call 0131 581 8509
           </a>
           <a href="#quote-form" class="quote-cta-form">Get Online Quote →</a>
         </div>
+        <p class="quote-hero__phone-note" style="margin-top:14px;font-size:0.85rem;opacity:0.85;">
+          Calling from abroad? Dial <span style="white-space:nowrap;">+44 131 581 8509</span>.
+        </p>
       </div>
 
       <div class="quote-form-card" id="quote-form">
@@ -365,7 +393,7 @@
             <textarea id="message" name="message" placeholder="e.g. Boiler losing pressure overnight"></textarea>
           </div>
           <button type="submit" class="form-submit">Get My Free Quote</button>
-          <p class="form-disclaimer">Or call us now on <a href="tel:01315818509" style="color:#0a3d62;font-weight:700;">0131 581 8509</a></p>
+          <p class="form-disclaimer">Or call us now on <a href="tel:+441315818509" style="color:#0a3d62;font-weight:700;" onclick="trackCall()">0131 581 8509</a> (international: +44 131 581 8509)</p>
         </form>
       </div>
     </div>
@@ -468,26 +496,45 @@
   <section class="final-cta">
     <h2>Ready for Your Free Quote?</h2>
     <p>Call now and speak to a real engineer — or send your details and we'll come back within an hour.</p>
-    <a href="tel:01315818509" class="quote-cta-call" style="background:#2ecc71;">
+    <a href="tel:+441315818509" class="quote-cta-call" style="background:#2ecc71;" onclick="trackCall()" aria-label="Call 0131 581 8509 (international +44 131 581 8509)">
       <span class="phone-icon">📞</span> Call 0131 581 8509
     </a>
+    <p style="margin-top:14px;font-size:0.85rem;opacity:0.85;">UK: 0131 581 8509 &nbsp;•&nbsp; International: +44 131 581 8509</p>
   </section>
 
   <footer class="quote-footer">
-    <p>West Lothian Gas — Broxburn, EH52 6FB — <a href="tel:01315818509">0131 581 8509</a> — <a href="mailto:westlothiangas@gmail.com">westlothiangas@gmail.com</a></p>
+    <p>West Lothian Gas — Broxburn, EH52 6FB — <a href="tel:+441315818509" onclick="trackCall()">0131 581 8509</a> (+44 131 581 8509) — <a href="mailto:westlothiangas@gmail.com">westlothiangas@gmail.com</a></p>
     <p style="margin-top:8px;opacity:0.6;">Gas Safe Registered Engineer • Fully Insured • &copy; West Lothian Gas</p>
   </footer>
 
   <!-- Sticky mobile call button -->
-  <a href="tel:01315818509" class="sticky-call" onclick="trackCall()">📞 Tap to Call — 0131 581 8509</a>
+  <a href="tel:+441315818509" class="sticky-call" onclick="trackCall()" aria-label="Call 0131 581 8509 (international +44 131 581 8509)">📞 Call 0131 581 8509</a>
 
   <script>
-    // Lightweight conversion-friendly call tracking hook (works with gtag if present)
+    // Safe call tracking — fires for gtag and GTM dataLayer if present; no-op otherwise.
     function trackCall() {
-      if (typeof gtag === 'function') {
-        gtag('event', 'phone_call_click', { 'event_category': 'engagement', 'event_label': 'quote_page' });
-      }
+      try {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'phone_call_click', {
+            event_category: 'engagement',
+            event_label: 'quote_page',
+            phone_number: '+441315818509'
+          });
+        }
+        if (Array.isArray(window.dataLayer)) {
+          window.dataLayer.push({
+            event: 'phone_click',
+            phone_number: '+441315818509',
+            page: 'quote'
+          });
+        }
+      } catch (e) { /* never block the call */ }
     }
+    // Safety net: catch any tel: link click on the page (in case onclick is removed later).
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+      if (a) trackCall();
+    });
   </script>
 </body>
 </html>

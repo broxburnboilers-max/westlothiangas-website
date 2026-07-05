@@ -187,6 +187,17 @@ img {
   margin-bottom: 12px;
 }
 
+.hero__logo-large {
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 24px;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
 .hero__title {
   margin: 0 0 16px;
   font-family: var(--font-display);

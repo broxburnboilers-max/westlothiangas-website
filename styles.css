@@ -234,11 +234,11 @@ img {
   width: 100%;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
-  object-fit: cover;
 }
 
 .hero__img--photo {
-  height: 400px;
+  height: auto;
+  object-fit: contain;
   object-position: top center;
 }
 

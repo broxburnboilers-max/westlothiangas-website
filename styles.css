@@ -238,7 +238,8 @@ img {
 }
 
 .hero__img--photo {
-  height: 240px;
+  height: 400px;
+  object-position: top center;
 }
 
 .hero__img--sign {

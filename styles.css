@@ -170,7 +170,7 @@ img {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 42px;
-  align-items: center;
+  align-items: start;
 }
 
 .hero__eyebrow,

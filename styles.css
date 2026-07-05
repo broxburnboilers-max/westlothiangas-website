@@ -198,9 +198,10 @@ img {
 
 .leaderboard-bar img {
   width: 728px;
-  max-width: 100%;
-  height: auto;
+  max-width: 728px;
+  height: 90px;
   display: block;
+  object-fit: none;
 }
 
 .hero__eyebrow {

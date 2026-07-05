@@ -182,26 +182,14 @@ img {
   font-family: var(--font-display);
 }
 
-.leaderboard-bar {
-  background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  line-height: 0;
-}
-
-.leaderboard-bar a {
-  display: block;
-  line-height: 0;
-}
-
-.leaderboard-bar img {
-  width: 728px;
-  max-width: 728px;
+.hero__leaderboard {
+  width: 100%;
   height: 90px;
+  object-fit: cover;
+  object-position: left center;
   display: block;
-  object-fit: none;
+  border-radius: var(--radius-sm);
+  margin-bottom: 28px;
 }
 
 .hero__eyebrow {

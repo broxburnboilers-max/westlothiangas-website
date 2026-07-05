@@ -236,8 +236,15 @@ img {
   gap: 8px;
 }
 
+.hero__content {
+  display: flex;
+  flex-direction: column;
+}
+
 .hero__reviews {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   margin-top: 24px;
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.2);
@@ -278,12 +285,35 @@ img {
   color: #fff;
 }
 
+.hero__reviews-quotes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .hero__reviews-quote {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-size: 0.95rem;
   color: rgba(255,255,255,0.9);
   font-style: italic;
   line-height: 1.5;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero__reviews-quote:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.hero__reviews-quote cite {
+  font-style: normal;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 4px;
 }
 
 .hero__reviews-count {

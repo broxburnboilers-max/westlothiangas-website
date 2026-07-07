@@ -1,16 +1,14 @@
 /* ===== PLANS PAGE ===== */
 
 .plans-hero {
-  background: var(--clr-primary);
+  background: #001b5e;
   padding: 64px 24px 56px;
   text-align: center;
 }
-
 .plans-hero__inner {
   max-width: 700px;
   margin: 0 auto;
 }
-
 .plans-hero__eyebrow {
   font-size: 0.78rem;
   font-weight: 700;
@@ -19,37 +17,33 @@
   color: rgba(255,255,255,0.65);
   margin: 0 0 12px;
 }
-
 .plans-hero__title {
-  font-family: var(--font-display);
+  font-family: 'Lato', sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
   color: #fff;
   margin: 0 0 16px;
   line-height: 1.15;
 }
-
 .plans-hero__sub {
   font-size: 1.1rem;
   color: rgba(255,255,255,0.85);
   margin: 0 0 28px;
   line-height: 1.6;
 }
-
 .plans-hero__badges {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
 }
-
-.badge {
+.plans-badge {
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.25);
   color: #fff;
   font-size: 0.85rem;
   font-weight: 700;
-  padding: 6px 14px;
+  padding: 6px 16px;
   border-radius: 999px;
 }
 
@@ -57,7 +51,6 @@
   padding: 64px 24px;
   background: #f4f6fb;
 }
-
 .plans-section__inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -66,7 +59,6 @@
   gap: 28px;
   align-items: start;
 }
-
 @media (max-width: 860px) {
   .plans-section__inner {
     grid-template-columns: 1fr;
@@ -84,44 +76,39 @@
   flex-direction: column;
   border: 2px solid transparent;
 }
-
 .plan-card--featured {
-  border-color: var(--clr-primary);
-  box-shadow: 0 8px 32px rgba(0,40,130,0.18);
+  border-color: #001b5e;
+  box-shadow: 0 8px 32px rgba(0,27,94,0.2);
   transform: translateY(-8px);
 }
-
-.plan-card__badge {
+.plan-card__popular {
   position: absolute;
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--clr-accent);
+  background: #e85d04;
   color: #fff;
   font-size: 0.75rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 5px 16px;
+  padding: 5px 18px;
   border-radius: 999px;
   white-space: nowrap;
 }
-
 .plan-card__header {
   text-align: center;
   margin-bottom: 28px;
   padding-bottom: 24px;
   border-bottom: 1px solid #e8ecf4;
 }
-
 .plan-card__name {
-  font-family: var(--font-display);
+  font-family: 'Lato', sans-serif;
   font-size: 1.3rem;
   font-weight: 900;
-  color: var(--clr-primary);
+  color: #001b5e;
   margin: 0 0 16px;
 }
-
 .plan-card__price {
   display: flex;
   align-items: baseline;
@@ -129,27 +116,23 @@
   gap: 4px;
   margin-bottom: 6px;
 }
-
 .plan-card__amount {
-  font-family: var(--font-display);
+  font-family: 'Lato', sans-serif;
   font-size: 2.8rem;
   font-weight: 900;
-  color: var(--clr-primary);
+  color: #001b5e;
   line-height: 1;
 }
-
 .plan-card__period {
   font-size: 1rem;
   color: #6b7a99;
   font-weight: 600;
 }
-
 .plan-card__tagline {
   font-size: 0.85rem;
   color: #6b7a99;
   margin: 0;
 }
-
 .plan-card__features {
   list-style: none;
   padding: 0;
@@ -159,7 +142,6 @@
   flex-direction: column;
   gap: 12px;
 }
-
 .plan-card__features li {
   font-size: 0.95rem;
   color: #2d3a55;
@@ -167,7 +149,6 @@
   position: relative;
   line-height: 1.5;
 }
-
 .plan-card__features li::before {
   content: "✓";
   position: absolute;
@@ -175,81 +156,88 @@
   color: #22c55e;
   font-weight: 900;
 }
-
 .plan-card__footer {
   text-align: center;
 }
 
-.btn--outline-dark {
-  display: inline-block;
-  padding: 13px 28px;
-  border: 2px solid var(--clr-primary);
-  border-radius: var(--radius-sm);
-  color: var(--clr-primary);
+.plan-btn {
+  display: block;
+  width: 100%;
+  padding: 13px 20px;
+  border-radius: 6px;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-  width: 100%;
   text-align: center;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+  box-sizing: border-box;
 }
-
-.btn--outline-dark:hover {
-  background: var(--clr-primary);
+.plan-btn--primary {
+  background: #e85d04;
+  color: #fff;
+  border: 2px solid #e85d04;
+}
+.plan-btn--primary:hover { opacity: 0.88; }
+.plan-btn--outline {
+  background: transparent;
+  color: #001b5e;
+  border: 2px solid #001b5e;
+}
+.plan-btn--outline:hover {
+  background: #001b5e;
   color: #fff;
 }
+.plan-btn--white {
+  background: #fff;
+  color: #e85d04;
+  border: 2px solid #fff;
+  display: inline-block;
+  width: auto;
+  padding: 14px 36px;
+}
+.plan-btn--white:hover { opacity: 0.9; }
 
 .plans-why {
   padding: 64px 24px;
   background: #fff;
 }
-
 .plans-why__inner {
   max-width: 1000px;
   margin: 0 auto;
 }
-
 .plans-why__title {
-  font-family: var(--font-display);
+  font-family: 'Lato', sans-serif;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 900;
-  color: var(--clr-primary);
+  color: #001b5e;
   text-align: center;
   margin: 0 0 48px;
 }
-
 .plans-why__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
-
 @media (max-width: 860px) {
   .plans-why__grid { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 480px) {
   .plans-why__grid { grid-template-columns: 1fr; }
 }
-
-.plans-why__item {
-  text-align: center;
-}
-
+.plans-why__item { text-align: center; }
 .plans-why__icon {
   font-size: 2rem;
   margin-bottom: 12px;
   line-height: 1;
 }
-
 .plans-why__item h3 {
-  font-family: var(--font-display);
+  font-family: 'Lato', sans-serif;
   font-size: 1rem;
   font-weight: 900;
-  color: var(--clr-primary);
+  color: #001b5e;
   margin: 0 0 8px;
 }
-
 .plans-why__item p {
   font-size: 0.9rem;
   color: #4a5568;
@@ -261,45 +249,40 @@
   padding: 64px 24px;
   background: #f4f6fb;
 }
-
 .plans-faq__inner {
   max-width: 720px;
   margin: 0 auto;
 }
-
 .plans-faq__title {
-  font-family: var(--font-display);
+  font-family: 'Lato', sans-serif;
   font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 900;
-  color: var(--clr-primary);
+  color: #001b5e;
   text-align: center;
   margin: 0 0 40px;
 }
-
 .plans-faq__list {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-
 .faq-item {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.06);
   overflow: hidden;
 }
-
 .faq-item__q {
   display: block;
   padding: 18px 48px 18px 22px;
   font-weight: 700;
-  color: var(--clr-primary);
+  color: #001b5e;
   cursor: pointer;
   font-size: 0.97rem;
   list-style: none;
   position: relative;
 }
-
+.faq-item__q::-webkit-details-marker { display: none; }
 .faq-item__q::after {
   content: "+";
   position: absolute;
@@ -308,13 +291,9 @@
   transform: translateY(-50%);
   font-size: 1.4rem;
   font-weight: 300;
-  color: var(--clr-primary);
+  color: #001b5e;
 }
-
-details[open] .faq-item__q::after {
-  content: "−";
-}
-
+details[open] .faq-item__q::after { content: "\2212"; }
 .faq-item__a {
   padding: 0 22px 18px;
   font-size: 0.93rem;
@@ -322,24 +301,21 @@ details[open] .faq-item__q::after {
   line-height: 1.7;
   margin: 0;
 }
-
 .faq-item__a a {
-  color: var(--clr-primary);
+  color: #001b5e;
   font-weight: 700;
 }
 
-.cta-strip {
-  background: var(--clr-accent);
-  padding: 48px 24px;
+.plans-cta {
+  background: #e85d04;
+  padding: 56px 24px;
   text-align: center;
 }
-
-.cta-strip__inner {
+.plans-cta__inner {
   max-width: 600px;
   margin: 0 auto;
 }
-
-.cta-strip__label {
+.plans-cta__label {
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -347,32 +323,22 @@ details[open] .faq-item__q::after {
   color: rgba(255,255,255,0.75);
   margin: 0 0 8px;
 }
-
-.cta-strip__text {
+.plans-cta__text {
   font-size: 1.2rem;
   font-weight: 700;
   color: #fff;
-  margin: 0 0 24px;
+  margin: 0 0 28px;
   line-height: 1.5;
 }
 
-.btn--white {
-  display: inline-block;
-  background: #fff;
-  color: var(--clr-accent);
-  font-weight: 900;
-  font-size: 1rem;
-  padding: 14px 32px;
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  transition: opacity 0.2s;
+.footer {
+  background: #001b5e;
+  padding: 24px;
+  text-align: center;
 }
-
-.btn--white:hover {
-  opacity: 0.9;
-}
-
-.site-nav__link--active {
-  color: var(--clr-primary);
-  font-weight: 700;
+.footer__inner { max-width: 1100px; margin: 0 auto; }
+.footer__copy {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  margin: 0;
 }

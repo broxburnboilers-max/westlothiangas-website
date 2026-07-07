@@ -13,59 +13,63 @@
 </head>
 <body>
   <a class="sr-only" href="#main-content">Skip to content</a>
+
   <div class="topbar">
     <div class="topbar__inner">
       <p class="topbar__trust">Gas Safe registered engineer serving West Lothian &amp; Edinburgh</p>
       <div class="topbar__contact">
         <a class="topbar__link" href="mailto:westlothiangas@gmail.com">westlothiangas@gmail.com</a>
-        <a class="topbar__link topbar__link--phone" href="tel:01315818509">Call 0131 581 8509</a>
+        <a class="topbar__phone" href="tel:01315818509">Call 0131 581 8509</a>
       </div>
     </div>
   </div>
-  <header class="site-header" role="banner">
-    <div class="site-header__inner">
-      <a class="site-header__brand" href="index.html" aria-label="West Lothian Gas home">
-        <img src="assets/wlg-logo.png" alt="West Lothian Gas" class="site-header__logo" />
-        <span class="site-header__name">West Lothian Gas</span>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__brand-wrap" aria-label="West Lothian Gas home">
+        <img src="assets/FullLogo_Transparent_NoBuffer.jpg" alt="West Lothian Gas logo" class="header__logo" loading="eager" />
+        <span class="header__brand">West Lothian Gas</span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <ul class="site-nav__list" role="list">
-          <li><a class="site-nav__link" href="index.html#services">Services</a></li>
-          <li><a class="site-nav__link" href="index.html#gas-safety">Gas safety</a></li>
-          <li><a class="site-nav__link site-nav__link--active" href="plans.html">Service plans</a></li>
-          <li><a class="site-nav__link" href="index.html#reviews">Reviews</a></li>
-          <li><a class="site-nav__link" href="index.html#contact">Contact</a></li>
-        </ul>
+      <nav class="header__nav" aria-label="Main navigation">
+        <a class="header__nav-link" href="index.html#services">Services</a>
+        <a class="header__nav-link" href="index.html#gas-safety">Gas safety</a>
+        <a class="header__nav-link" href="plans.html" style="color:#e85d04;font-weight:700;">Service plans</a>
+        <a class="header__nav-link" href="index.html#reviews">Reviews</a>
+        <a class="header__nav-link" href="index.html#contact">Contact</a>
+        <a class="header__nav-cta" href="index.html#contact">Get a quote</a>
       </nav>
-      <a class="btn btn--primary" href="quote.html">Get a quote</a>
     </div>
   </header>
+
   <main id="main-content">
+
     <section class="plans-hero">
       <div class="plans-hero__inner">
         <p class="plans-hero__eyebrow">West Lothian &amp; Edinburgh</p>
         <h1 class="plans-hero__title">Boiler service &amp; breakdown plans</h1>
-        <p class="plans-hero__sub">Local, Gas Safe cover with no excess fees, no call centres and a real engineer on WhatsApp 24/7. Better cover than the big names — at a fraction of the cost.</p>
+        <p class="plans-hero__sub">Local Gas Safe cover with no excess fees, no call centres and a real engineer on WhatsApp 24/7. Better cover than the big names — at a fraction of the cost.</p>
         <div class="plans-hero__badges">
-          <span class="badge">✓ No excess fees</span>
-          <span class="badge">✓ Gas Safe registered</span>
-          <span class="badge">✓ Local engineer</span>
-          <span class="badge">✓ 24/7 WhatsApp</span>
+          <span class="plans-badge">&#10003; No excess fees</span>
+          <span class="plans-badge">&#10003; Gas Safe registered</span>
+          <span class="plans-badge">&#10003; Local engineer</span>
+          <span class="plans-badge">&#10003; 24/7 WhatsApp</span>
         </div>
       </div>
     </section>
+
     <section class="plans-section">
       <div class="plans-section__inner">
+
         <div class="plan-card">
           <div class="plan-card__header">
             <h2 class="plan-card__name">Annual Service</h2>
             <div class="plan-card__price">
-              <span class="plan-card__amount">£9.99</span>
+              <span class="plan-card__amount">&pound;9.99</span>
               <span class="plan-card__period">/ month</span>
             </div>
-            <p class="plan-card__tagline">£119.88/yr &bull; Cancel anytime</p>
+            <p class="plan-card__tagline">&pound;119.88/yr &bull; Cancel anytime</p>
           </div>
-          <ul class="plan-card__features" role="list">
+          <ul class="plan-card__features">
             <li>Full boiler service by a Gas Safe engineer</li>
             <li>Gas safety check &amp; flue inspection</li>
             <li>Boiler efficiency check &amp; clean</li>
@@ -74,42 +78,44 @@
             <li>Suitable for landlords &amp; homeowners</li>
           </ul>
           <div class="plan-card__footer">
-            <a class="btn btn--outline-dark" href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Annual%20Service%20plan" target="_blank" rel="noopener noreferrer">Book via WhatsApp</a>
+            <a class="plan-btn plan-btn--outline" href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Annual%20Service%20plan" target="_blank" rel="noopener noreferrer">Book via WhatsApp</a>
           </div>
         </div>
+
         <div class="plan-card plan-card--featured">
-          <div class="plan-card__badge">Most popular</div>
+          <div class="plan-card__popular">Most popular</div>
           <div class="plan-card__header">
             <h2 class="plan-card__name">Service &amp; Breakdown</h2>
             <div class="plan-card__price">
-              <span class="plan-card__amount">£19.99</span>
+              <span class="plan-card__amount">&pound;19.99</span>
               <span class="plan-card__period">/ month</span>
             </div>
-            <p class="plan-card__tagline">£239.88/yr &bull; Cancel anytime</p>
+            <p class="plan-card__tagline">&pound;239.88/yr &bull; Cancel anytime</p>
           </div>
-          <ul class="plan-card__features" role="list">
+          <ul class="plan-card__features">
             <li>Everything in Annual Service</li>
             <li>Unlimited breakdown callouts</li>
-            <li>Parts &amp; labour included (up to £500/repair)</li>
+            <li>Parts &amp; labour included (up to &pound;500/repair)</li>
             <li>Priority same-day response in West Lothian</li>
             <li>24/7 WhatsApp message response</li>
             <li><strong>No excess fee per repair</strong></li>
             <li>12-month workmanship guarantee</li>
           </ul>
           <div class="plan-card__footer">
-            <a class="btn btn--primary" href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20to%20sign%20up%20for%20the%20Service%20%26%20Breakdown%20plan" target="_blank" rel="noopener noreferrer">Sign up via WhatsApp</a>
+            <a class="plan-btn plan-btn--primary" href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20to%20sign%20up%20for%20the%20Service%20%26%20Breakdown%20plan" target="_blank" rel="noopener noreferrer">Sign up via WhatsApp</a>
           </div>
         </div>
+
         <div class="plan-card">
           <div class="plan-card__header">
             <h2 class="plan-card__name">Full Cover</h2>
             <div class="plan-card__price">
-              <span class="plan-card__amount">£29.99</span>
+              <span class="plan-card__amount">&pound;29.99</span>
               <span class="plan-card__period">/ month</span>
             </div>
-            <p class="plan-card__tagline">£359.88/yr &bull; Cancel anytime</p>
+            <p class="plan-card__tagline">&pound;359.88/yr &bull; Cancel anytime</p>
           </div>
-          <ul class="plan-card__features" role="list">
+          <ul class="plan-card__features">
             <li>Everything in Service &amp; Breakdown</li>
             <li>Full central heating system covered</li>
             <li>Radiators, valves &amp; pump included</li>
@@ -119,38 +125,41 @@
             <li>Ideal for landlords &amp; rental properties</li>
           </ul>
           <div class="plan-card__footer">
-            <a class="btn btn--outline-dark" href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20to%20sign%20up%20for%20the%20Full%20Cover%20plan" target="_blank" rel="noopener noreferrer">Sign up via WhatsApp</a>
+            <a class="plan-btn plan-btn--outline" href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20to%20sign%20up%20for%20the%20Full%20Cover%20plan" target="_blank" rel="noopener noreferrer">Sign up via WhatsApp</a>
           </div>
         </div>
+
       </div>
     </section>
+
     <section class="plans-why">
       <div class="plans-why__inner">
         <h2 class="plans-why__title">Why choose West Lothian Gas over British Gas?</h2>
         <div class="plans-why__grid">
           <div class="plans-why__item">
-            <div class="plans-why__icon">⚡</div>
+            <div class="plans-why__icon">&#9889;</div>
             <h3>Faster response</h3>
-            <p>We're local to West Lothian — not dispatching from a national pool. You get a real engineer on your doorstep fast.</p>
+            <p>We're local to West Lothian — not dispatching from a national pool. A real engineer on your doorstep fast.</p>
           </div>
           <div class="plans-why__item">
-            <div class="plans-why__icon">💬</div>
+            <div class="plans-why__icon">&#128172;</div>
             <h3>No call centres</h3>
-            <p>Message us directly on WhatsApp 24/7. No hold music, no automated menus — just a straight answer from your engineer.</p>
+            <p>Message us on WhatsApp 24/7. No hold music, no menus — just a straight answer from your engineer.</p>
           </div>
           <div class="plans-why__item">
-            <div class="plans-why__icon">£</div>
+            <div class="plans-why__icon">&pound;</div>
             <h3>No excess fees</h3>
-            <p>British Gas charge up to £99 per repair. We charge nothing — what you pay monthly is all you pay.</p>
+            <p>British Gas charge up to &pound;99 per repair. We charge nothing — your monthly rate is all you pay.</p>
           </div>
           <div class="plans-why__item">
-            <div class="plans-why__icon">🔒</div>
+            <div class="plans-why__icon">&#128274;</div>
             <h3>Price stability</h3>
-            <p>British Gas hike prices at renewal. Your monthly rate stays fixed for the life of your plan with us.</p>
+            <p>British Gas hike prices at renewal. Your rate stays fixed for the life of your plan with us.</p>
           </div>
         </div>
       </div>
     </section>
+
     <section class="plans-faq">
       <div class="plans-faq__inner">
         <h2 class="plans-faq__title">Common questions</h2>
@@ -161,7 +170,7 @@
           </details>
           <details class="faq-item">
             <summary class="faq-item__q">Are pre-existing faults covered?</summary>
-            <p class="faq-item__a">We'll carry out an initial assessment on sign-up. Faults identified at that point are not covered, but any new faults that develop after joining are fully covered.</p>
+            <p class="faq-item__a">We carry out an initial assessment on sign-up. Faults identified at that point are not covered, but any new faults that develop after joining are fully covered.</p>
           </details>
           <details class="faq-item">
             <summary class="faq-item__q">Can I cancel at any time?</summary>
@@ -173,22 +182,25 @@
           </details>
           <details class="faq-item">
             <summary class="faq-item__q">How do I contact you in an emergency?</summary>
-            <p class="faq-item__a">Message us on WhatsApp at any time — day or night — on <a href="https://wa.me/447961768920" target="_blank" rel="noopener noreferrer">07961 768920</a>. We respond to emergencies as a priority.</p>
+            <p class="faq-item__a">Message us on WhatsApp at any time on <a href="https://wa.me/447961768920" target="_blank" rel="noopener noreferrer">07961 768920</a>. Emergencies are always our top priority.</p>
           </details>
         </div>
       </div>
     </section>
-    <section class="cta-strip">
-      <div class="cta-strip__inner">
-        <p class="cta-strip__label">Ready to get covered?</p>
-        <p class="cta-strip__text">Message us on WhatsApp and we'll get you set up on the right plan today.</p>
-        <a class="btn btn--white" href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20to%20find%20out%20about%20your%20service%20plans" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+
+    <section class="plans-cta">
+      <div class="plans-cta__inner">
+        <p class="plans-cta__label">Ready to get covered?</p>
+        <p class="plans-cta__text">Message us on WhatsApp and we'll get you set up on the right plan today.</p>
+        <a class="plan-btn plan-btn--white" href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20to%20find%20out%20about%20your%20service%20plans" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
       </div>
     </section>
+
   </main>
-  <footer class="site-footer" role="contentinfo">
-    <div class="site-footer__inner">
-      <p>&copy; <span id="yr"></span> West Lothian Gas. Gas Safe registered. All rights reserved.</p>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; <span id="yr"></span> West Lothian Gas. Gas Safe registered. All rights reserved.</p>
     </div>
   </footer>
   <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>

@@ -8,21 +8,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-B184Z8GNHM');
-
-  // Track plan button clicks
-  document.addEventListener('DOMContentLoaded', function() {
-    var buttons = document.querySelectorAll('.plan-btn');
-    buttons.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        gtag('event', 'plan_signup_click', {
-          'plan_name': btn.closest('.plan-card') ? btn.closest('.plan-card').querySelector('.plan-card__name').textContent : 'CTA',
-          'button_text': btn.textContent.trim()
-        });
-      });
-    });
-  });
 </script>
-<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

@@ -472,6 +472,40 @@ img {
   margin-bottom: 8px;
 }
 
+.reviews__google-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.reviews__google-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue);
+}
+
+.reviews__google-link strong {
+  color: var(--navy);
+}
+
+.reviews__google-stars {
+  color: #ffb400;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
 .section-heading h2,
 .gas-safety__title,
 .cta-section h2 {

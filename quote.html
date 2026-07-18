@@ -295,6 +295,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-size: 0.85rem;
     }
     .quote-footer a { color: #fff; text-decoration: none; margin: 0 8px; }
+    .quote-footer__sponsors {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 24px;
+      margin: 16px 0 4px;
+    }
+    .quote-footer__sponsor {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 10px; margin: 0; color: rgba(255,255,255,0.75);
+      font-size: 0.85rem; text-decoration: none; flex-wrap: wrap;
+    }
+    .quote-footer__sponsor:hover { color: #fff; }
+    .quote-footer__sponsor strong { color: rgba(255,255,255,0.95); }
+    .quote-footer__sponsor-logo { height: 26px; width: auto; display: inline-block; }
+    .quote-footer__sponsor-logo--crest { height: 34px; }
 
     /* Header simplification on landing page */
     .lp-header {
@@ -511,6 +525,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <footer class="quote-footer">
     <p>West Lothian Gas — Broxburn, EH52 6FB — <a href="tel:+441315818509" onclick="trackCall()">0131 581 8509</a> (+44 131 581 8509) — <a href="mailto:westlothiangas@gmail.com">westlothiangas@gmail.com</a></p>
+    <div class="quote-footer__sponsors">
+      <a class="quote-footer__sponsor" href="https://braintumourresearch.org/blogs/our-fundraising-groups/hannahs-kingdom" target="_blank" rel="noopener noreferrer">
+        <img class="quote-footer__sponsor-logo" src="assets/brain-tumour-research-white.png" alt="Brain Tumour Research logo" loading="lazy" />
+        <span>Proud sponsors of <strong>Hannah's Kingdom</strong>, supporting Brain Tumour Research</span>
+      </a>
+      <a class="quote-footer__sponsor" href="https://www.facebook.com/hopedragonsyfc/" target="_blank" rel="noopener noreferrer">
+        <img class="quote-footer__sponsor-logo quote-footer__sponsor-logo--crest" src="assets/hope-dragons-yfc-crest.png" alt="Hope Dragons YFC crest" loading="lazy" />
+        <span>Proud sponsors of <strong>Hope Dragons YFC</strong></span>
+      </a>
+    </div>
     <p style="margin-top:8px;opacity:0.6;">Gas Safe Registered Engineer • Fully Insured • &copy; West Lothian Gas</p>
   </footer>
 

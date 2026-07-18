@@ -334,8 +334,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-weight: 700; text-decoration: none;
       font-size: 0.95rem;
     }
+    .lp-header__sponsors {
+      display: flex; align-items: center; gap: 12px;
+      flex-wrap: wrap;
+    }
+    .lp-header__sponsors-label {
+      font-size: 0.72rem; font-weight: 700; color: #8a94a0;
+      text-transform: uppercase; letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+    .lp-header__sponsor-link { display: inline-flex; align-items: center; opacity: 0.9; }
+    .lp-header__sponsor-link:hover { opacity: 1; }
+    .lp-header__sponsor-logo { height: 20px; width: auto; display: block; }
+    .lp-header__sponsor-logo--crest { height: 28px; }
     @media (max-width: 480px) {
       .lp-header__name { display: none; }
+    }
+    @media (max-width: 640px) {
+      .lp-header__sponsors { display: none; }
     }
   </style>
 </head>
@@ -347,6 +363,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <img src="assets/FullLogo_Transparent_NoBuffer.jpg" alt="West Lothian Gas" class="lp-header__logo" />
         <span class="lp-header__name">West Lothian Gas</span>
       </a>
+      <div class="lp-header__sponsors">
+        <span class="lp-header__sponsors-label">Proud sponsors of</span>
+        <a class="lp-header__sponsor-link" href="https://braintumourresearch.org/blogs/our-fundraising-groups/hannahs-kingdom" target="_blank" rel="noopener noreferrer">
+          <img class="lp-header__sponsor-logo" src="assets/brain-tumour-research-color.png" alt="Brain Tumour Research — Hannah's Kingdom" loading="lazy" />
+        </a>
+        <a class="lp-header__sponsor-link" href="https://www.facebook.com/hopedragonsyfc/" target="_blank" rel="noopener noreferrer">
+          <img class="lp-header__sponsor-logo lp-header__sponsor-logo--crest" src="assets/hope-dragons-yfc-crest.png" alt="Hope Dragons YFC" loading="lazy" />
+        </a>
+      </div>
       <a href="tel:+441315818509" class="lp-header__phone" onclick="trackCall()" aria-label="Call West Lothian Gas on 0131 581 8509 (international +44 131 581 8509)">📞 0131 581 8509</a>
     </div>
   </header>

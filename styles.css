@@ -324,6 +324,38 @@ img {
   letter-spacing: 0.5px;
 }
 
+.hero__sponsors {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero__sponsors-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero__sponsor-link { display: inline-flex; align-items: center; }
+
+.hero__sponsor-logo {
+  height: 22px;
+  width: auto;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.15s;
+}
+
+.hero__sponsor-logo--crest { height: 32px; }
+
+.hero__sponsor-link:hover .hero__sponsor-logo { opacity: 1; }
+
 .hero__ticks li::before {
   content: "✓";
   color: #fff;

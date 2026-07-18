@@ -441,8 +441,77 @@ img {
 .gas-safety,
 .why-us,
 .reviews,
-.cta-section {
+.cta-section,
+.community {
   padding: 68px 20px;
+}
+
+.community {
+  background: var(--off-white);
+}
+
+.community__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.community__card {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  box-shadow: var(--shadow-sm);
+}
+
+.community__eyebrow {
+  display: inline-block;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 10px;
+}
+
+.community__title {
+  font-family: var(--font-display);
+  color: var(--navy);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.community__text {
+  color: var(--text-mid);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  margin: 0 0 20px;
+}
+
+.community__text a {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.community__link {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+
+.community__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .community__card { padding: 32px 22px; }
 }
 
 .services {

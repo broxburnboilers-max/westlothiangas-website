@@ -265,6 +265,11 @@
   width: auto;
   padding: 14px 32px;
 }
+.plans-landlord__note {
+  font-size: 0.82rem;
+  color: #6b7a99;
+  margin: 14px 0 0;
+}
 @media (max-width: 480px) {
   .plans-landlord__inner { padding: 32px 20px; }
 }

@@ -160,6 +160,14 @@
   text-align: center;
 }
 
+.plan-card__note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #6b7a99;
+  margin: 12px 0 0;
+  line-height: 1.4;
+}
+
 .plan-btn {
   display: block;
   width: 100%;

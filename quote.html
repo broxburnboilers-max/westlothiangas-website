@@ -159,21 +159,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .quote-form-card p.intro { margin: 0 0 18px; color: #555; font-size: 0.95rem; }
     .form-row { margin-bottom: 14px; }
-    .form-row label {
+    .form-row label, .form-row-label {
       display: block; font-weight: 600; font-size: 0.9rem;
       margin-bottom: 6px; color: #333;
     }
     .form-row input, .form-row select, .form-row textarea {
-      width: 100%; padding: 11px 14px;
+      width: 100%; padding: 14px 14px;
       border: 1px solid #d0d6dc; border-radius: 6px;
-      font-size: 1rem; font-family: inherit;
+      font-size: 16px; font-family: inherit;
       box-sizing: border-box;
+      min-height: 48px;
     }
     .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
       outline: none; border-color: #1e5a8a;
       box-shadow: 0 0 0 3px rgba(30,90,138,0.15);
     }
     .form-row textarea { resize: vertical; min-height: 80px; }
+    .service-chips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .service-chips { position: relative; }
+    .service-chips input {
+      position: absolute; width: 1px; height: 1px;
+      opacity: 0; overflow: hidden; clip: rect(0,0,0,0);
+    }
+    .service-chips label {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 10px 8px;
+      border: 1.5px solid #d0d6dc; border-radius: 8px;
+      font-size: 0.88rem; font-weight: 700; color: #0a3d62;
+      text-align: center; cursor: pointer; background: #f7f9fb;
+    }
+    .service-chips input:checked + label {
+      background: #0a3d62; color: #fff; border-color: #0a3d62;
+    }
+    .service-chips input:focus-visible + label {
+      box-shadow: 0 0 0 3px rgba(30,90,138,0.25);
+    }
+    .form-more { margin: 4px 0 16px; }
+    .form-more summary {
+      cursor: pointer; color: #1e5a8a; font-weight: 700;
+      font-size: 0.9rem; list-style: none;
+    }
+    .form-more summary::-webkit-details-marker { display: none; }
+    .form-more summary::after { content: " +"; }
+    .form-more[open] summary::after { content: " −"; }
+    .form-more .form-row { margin-top: 10px; }
     .form-submit {
       width: 100%; background: #e74c3c; color: #fff;
       border: 0; padding: 14px; border-radius: 8px;
@@ -281,11 +314,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       display: none;
     }
     @media (max-width: 768px) {
-      .quote-hero__inner { grid-template-columns: 1fr; gap: 24px; }
-      .quote-hero { padding: 32px 16px; }
-      .quote-hero__ticks { grid-template-columns: 1fr; }
+      .quote-hero__inner { grid-template-columns: 1fr; gap: 20px; }
+      .quote-hero { padding: 20px 16px 24px; }
+      .quote-hero__ticks { display: none; }
+      .quote-hero__sub { display: none; }
+      .quote-hero__cta-row { display: none; }
+      .quote-hero__phone-note { display: none; }
+      .quote-hero__title { font-size: 1.45rem; margin-bottom: 8px; }
+      .quote-hero__eyebrow { margin-bottom: 10px; }
+      .quote-form-card { padding: 20px 16px; }
       .sticky-call { display: block; }
       body { padding-bottom: 60px; }
+      .quote-hero__inner { display: flex; flex-direction: column; }
+      .quote-form-card { order: -1; }
     }
 
     /* Simple footer */
@@ -360,16 +401,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <header class="lp-header">
     <div class="lp-header__inner">
       <a href="/" class="lp-header__brand">
-        <img src="assets/FullLogo_Transparent_NoBuffer.jpg" alt="West Lothian Gas" class="lp-header__logo" />
+        <img src="assets/opt/logo-wlg.webp" alt="West Lothian Gas" class="lp-header__logo" width="48" height="48" />
         <span class="lp-header__name">West Lothian Gas</span>
       </a>
       <div class="lp-header__sponsors">
         <span class="lp-header__sponsors-label">Proud sponsors of</span>
         <a class="lp-header__sponsor-link" href="https://braintumourresearch.org/blogs/our-fundraising-groups/hannahs-kingdom" target="_blank" rel="noopener noreferrer">
-          <img class="lp-header__sponsor-logo" src="assets/brain-tumour-research-color.png" alt="Brain Tumour Research — Hannah's Kingdom" loading="lazy" />
+          <img class="lp-header__sponsor-logo" src="assets/opt/sponsor-btr-color.webp" alt="Brain Tumour Research — Hannah's Kingdom" width="120" height="31" loading="lazy" />
         </a>
         <a class="lp-header__sponsor-link" href="https://www.facebook.com/hopedragonsyfc/" target="_blank" rel="noopener noreferrer">
-          <img class="lp-header__sponsor-logo lp-header__sponsor-logo--crest" src="assets/hope-dragons-yfc-crest.png" alt="Hope Dragons YFC" loading="lazy" />
+          <img class="lp-header__sponsor-logo lp-header__sponsor-logo--crest" src="assets/opt/sponsor-hope-dragons.webp" alt="Hope Dragons YFC" width="28" height="31" loading="lazy" />
         </a>
       </div>
       <a href="tel:+441315818509" class="lp-header__phone" onclick="trackCall()" aria-label="Call West Lothian Gas on 0131 581 8509 (international +44 131 581 8509)">📞 0131 581 8509</a>
@@ -408,38 +449,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="quote-form-card" id="quote-form">
         <h2>Get Your Free Quote</h2>
         <p class="intro">No obligation. We reply within 1 working hour.</p>
-        <form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" method="POST" id="quoteForm">
+        <form name="quote" method="POST" action="/quote-thanks" data-netlify="true" netlify-honeypot="bot-field" id="quoteForm">
+          <input type="hidden" name="form-name" value="quote" />
           <input type="hidden" name="_subject" value="New quote request — West Lothian Gas" />
+          <p class="sr-only" aria-hidden="true">
+            <label>Leave blank <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </p>
           <div class="form-row">
             <label for="name">Your name *</label>
-            <input type="text" id="name" name="name" required autocomplete="name" />
+            <input type="text" id="name" name="name" required autocomplete="name" enterkeyhint="next" />
           </div>
           <div class="form-row">
             <label for="phone">Phone number *</label>
-            <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="07..." />
+            <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="07..." enterkeyhint="next" />
           </div>
           <div class="form-row">
             <label for="postcode">Postcode *</label>
-            <input type="text" id="postcode" name="postcode" required autocomplete="postal-code" placeholder="EH52..." />
+            <input type="text" id="postcode" name="postcode" required autocomplete="postal-code" placeholder="EH52..." enterkeyhint="next" />
           </div>
           <div class="form-row">
-            <label for="service">What do you need? *</label>
-            <select id="service" name="service" required>
-              <option value="">— Choose a service —</option>
-              <option>Boiler repair</option>
-              <option>New boiler / replacement</option>
-              <option>Boiler service</option>
-              <option>Landlord gas safety certificate (CP12)</option>
-              <option>Hob or cooker install</option>
-              <option>Other heating work</option>
-            </select>
+            <span class="form-row-label" id="service-label">What do you need? *</span>
+            <div class="service-chips" role="radiogroup" aria-labelledby="service-label">
+              <input type="radio" id="svc-repair" name="service" value="Boiler repair" required>
+              <label for="svc-repair">Repair</label>
+              <input type="radio" id="svc-new" name="service" value="New boiler / replacement">
+              <label for="svc-new">New boiler</label>
+              <input type="radio" id="svc-service" name="service" value="Boiler service">
+              <label for="svc-service">Service</label>
+              <input type="radio" id="svc-cp12" name="service" value="Landlord gas safety certificate (CP12)">
+              <label for="svc-cp12">Landlord cert</label>
+              <input type="radio" id="svc-hob" name="service" value="Hob or cooker install">
+              <label for="svc-hob">Hob / cooker</label>
+              <input type="radio" id="svc-other" name="service" value="Other heating work">
+              <label for="svc-other">Other</label>
+            </div>
           </div>
-          <div class="form-row">
-            <label for="message">Brief description (optional)</label>
-            <textarea id="message" name="message" placeholder="e.g. Boiler losing pressure overnight"></textarea>
-          </div>
+          <details class="form-more">
+            <summary>Add a note (optional)</summary>
+            <div class="form-row">
+              <label for="message" class="sr-only">Brief description</label>
+              <textarea id="message" name="message" placeholder="e.g. Boiler losing pressure overnight"></textarea>
+            </div>
+          </details>
           <button type="submit" class="form-submit">Get My Free Quote</button>
-          <p class="form-disclaimer">Or call us now on <a href="tel:+441315818509" style="color:#0a3d62;font-weight:700;" onclick="trackCall()">0131 581 8509</a> (international: +44 131 581 8509)</p>
+          <p class="form-disclaimer">Or call us now on <a href="tel:+441315818509" style="color:#0a3d62;font-weight:700;" onclick="trackCall()">0131 581 8509</a></p>
         </form>
       </div>
     </div>
@@ -552,11 +605,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p>West Lothian Gas — Broxburn, EH52 6FB — <a href="tel:+441315818509" onclick="trackCall()">0131 581 8509</a> (+44 131 581 8509) — <a href="mailto:westlothiangas@gmail.com">westlothiangas@gmail.com</a></p>
     <div class="quote-footer__sponsors">
       <a class="quote-footer__sponsor" href="https://braintumourresearch.org/blogs/our-fundraising-groups/hannahs-kingdom" target="_blank" rel="noopener noreferrer">
-        <img class="quote-footer__sponsor-logo" src="assets/brain-tumour-research-white.png" alt="Brain Tumour Research logo" loading="lazy" />
+        <img class="quote-footer__sponsor-logo" src="assets/opt/sponsor-btr-white.webp" alt="Brain Tumour Research logo" width="130" height="51" loading="lazy" />
         <span>Proud sponsors of <strong>Hannah's Kingdom</strong>, supporting Brain Tumour Research</span>
       </a>
       <a class="quote-footer__sponsor" href="https://www.facebook.com/hopedragonsyfc/" target="_blank" rel="noopener noreferrer">
-        <img class="quote-footer__sponsor-logo quote-footer__sponsor-logo--crest" src="assets/hope-dragons-yfc-crest.png" alt="Hope Dragons YFC crest" loading="lazy" />
+        <img class="quote-footer__sponsor-logo quote-footer__sponsor-logo--crest" src="assets/opt/sponsor-hope-dragons.webp" alt="Hope Dragons YFC crest" width="34" height="38" loading="lazy" />
         <span>Proud sponsors of <strong>Hope Dragons YFC</strong></span>
       </a>
     </div>

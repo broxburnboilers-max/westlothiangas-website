@@ -130,6 +130,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: transform 0.15s, box-shadow 0.15s;
     }
     .quote-cta-call:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(46,204,113,0.4); }
+    .quote-cta-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(37,211,102,0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .quote-cta-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37,211,102,0.45); }
     .quote-cta-call .phone-icon {
       width: 22px; height: 22px; background: rgba(255,255,255,0.25);
       border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -439,6 +454,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <span class="phone-icon">📞</span>
             Call 0131 581 8509
           </a>
+          <a href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20boiler%2Fgas%20work" class="quote-cta-whatsapp" onclick="trackWhatsApp()" target="_blank" rel="noopener noreferrer" aria-label="Message West Lothian Gas on WhatsApp">
+            <span class="phone-icon">💬</span>
+            WhatsApp Us
+          </a>
           <a href="#quote-form" class="quote-cta-form">Get Online Quote →</a>
         </div>
         <p class="quote-hero__phone-note" style="margin-top:14px;font-size:0.85rem;opacity:0.85;">
@@ -462,6 +481,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="form-row">
             <label for="phone">Phone number *</label>
             <input type="tel" id="phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="07..." enterkeyhint="next" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" enterkeyhint="next" />
           </div>
           <div class="form-row">
             <label for="postcode">Postcode *</label>
@@ -598,6 +621,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a href="tel:+441315818509" class="quote-cta-call" style="background:#2ecc71;" onclick="trackCall()" aria-label="Call 0131 581 8509 (international +44 131 581 8509)">
       <span class="phone-icon">📞</span> Call 0131 581 8509
     </a>
+    <a href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20boiler%2Fgas%20work" class="quote-cta-whatsapp" onclick="trackWhatsApp()" target="_blank" rel="noopener noreferrer" aria-label="Message West Lothian Gas on WhatsApp" style="margin-left:12px;">
+      <span class="phone-icon">💬</span> WhatsApp Us
+    </a>
     <p style="margin-top:14px;font-size:0.85rem;opacity:0.85;">UK: 0131 581 8509 &nbsp;•&nbsp; International: +44 131 581 8509</p>
   </section>
 
@@ -639,10 +665,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
       } catch (e) { /* never block the call */ }
     }
+    // WhatsApp click tracking — fires for gtag and GTM dataLayer if present; no-op otherwise.
+    function trackWhatsApp() {
+      try {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'whatsapp_click', {
+            event_category: 'engagement',
+            event_label: 'quote_page',
+            whatsapp_number: '+447961768920'
+          });
+        }
+        if (Array.isArray(window.dataLayer)) {
+          window.dataLayer.push({
+            event: 'whatsapp_click',
+            whatsapp_number: '+447961768920',
+            page: 'quote'
+          });
+        }
+      } catch (e) { /* never block the click */ }
+    }
     // Safety net: catch any tel: link click on the page (in case onclick is removed later).
     document.addEventListener('click', function (e) {
       var a = e.target.closest && e.target.closest('a[href^="tel:"]');
       if (a) trackCall();
+      var w = e.target.closest && e.target.closest('a[href*="wa.me"]');
+      if (w) trackWhatsApp();
     });
   </script>
 </body>

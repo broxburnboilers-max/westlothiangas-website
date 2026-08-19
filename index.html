@@ -358,6 +358,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
         <div class="cta-section__actions">
           <a href="tel:01315818509" class="btn btn--primary btn--lg">Call 0131 581 8509</a>
+          <a href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20boiler%2Fgas%20work" class="btn btn--lg" style="background:#25D366;color:#fff;" onclick="trackWhatsApp()" target="_blank" rel="noopener noreferrer" aria-label="Message West Lothian Gas on WhatsApp">WhatsApp us</a>
           <a href="mailto:westlothiangas@gmail.com" class="btn btn--light btn--lg">Email us</a>
         </div>
       </div>
@@ -386,5 +387,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     </div>
   </footer>
+  <script>
+    // WhatsApp click tracking — fires for gtag and GTM dataLayer if present; no-op otherwise.
+    function trackWhatsApp() {
+      try {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'whatsapp_click', {
+            event_category: 'engagement',
+            event_label: 'homepage',
+            whatsapp_number: '+447961768920'
+          });
+        }
+        if (Array.isArray(window.dataLayer)) {
+          window.dataLayer.push({
+            event: 'whatsapp_click',
+            whatsapp_number: '+447961768920',
+            page: 'home'
+          });
+        }
+      } catch (e) { /* never block the click */ }
+    }
+    document.addEventListener('click', function (e) {
+      var w = e.target.closest && e.target.closest('a[href*="wa.me"]');
+      if (w) trackWhatsApp();
+    });
+  </script>
 </body>
 </html>

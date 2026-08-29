@@ -282,11 +282,49 @@
   .plans-landlord__inner { padding: 32px 20px; }
 }
 
+.plans-offerbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: linear-gradient(90deg, #ff6b00, #ff8c1a);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+.plans-offerbar__badge {
+  background: #fff;
+  color: #e05f00;
+  font-weight: 900;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.plans-offerbar__text { color: #fff; }
+.plans-offerbar__text strong { font-weight: 900; }
+.plans-offerbar__cta {
+  font-weight: 700;
+  text-decoration: underline;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.plans-offerbar:hover { filter: brightness(1.05); }
+@media (max-width: 640px) {
+  .plans-offerbar { font-size: 0.86rem; padding: 10px 16px; }
+}
+
 .plans-finance {
   padding: 8px 24px 56px;
   background: #fff;
 }
 .plans-finance__inner {
+  position: relative;
   max-width: 760px;
   margin: 0 auto;
   background: #fff7f0;
@@ -294,6 +332,26 @@
   border-radius: 16px;
   padding: 40px 36px;
   text-align: center;
+  overflow: hidden;
+}
+.plans-finance__ribbon {
+  position: absolute;
+  top: 18px;
+  right: -46px;
+  width: 200px;
+  background: #c0392b;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  text-align: center;
+  padding: 6px 0;
+  transform: rotate(40deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+}
+@media (max-width: 480px) {
+  .plans-finance__ribbon { top: 14px; right: -52px; width: 180px; font-size: 0.7rem; }
 }
 .plans-finance__badge {
   display: inline-block;

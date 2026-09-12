@@ -591,3 +591,46 @@ details[open] .faq-item__q::after { content: "\2212"; }
   font-size: 0.85rem;
   margin: 0;
 }
+
+/* Quote CTA banner (links to the online, signable boiler quote) */
+.plans-quote-cta {
+  padding: 40px 24px;
+  background: #f4f6fb;
+  border-bottom: 1px solid #e3e7ee;
+}
+.plans-quote-cta__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border: 2px solid #001b5e;
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.plans-quote-cta__title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  color: #001b5e;
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+}
+.plans-quote-cta__text {
+  color: #444f6a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 560px;
+}
+.plans-quote-cta .plan-btn {
+  white-space: nowrap;
+  width: auto;
+  padding: 14px 26px;
+}
+@media (max-width: 640px) {
+  .plans-quote-cta__inner { padding: 24px 20px; flex-direction: column; align-items: stretch; text-align: center; }
+  .plans-quote-cta .plan-btn { width: 100%; }
+}

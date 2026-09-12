@@ -22,6 +22,71 @@
   --max-w: 1120px;
 }
 
+/* Boiler installation promo banner — top-of-site, high-visibility CTA */
+.boiler-banner {
+  display: block;
+  background: linear-gradient(90deg, var(--accent) 0%, #ff8c3a 50%, var(--accent) 100%);
+  background-size: 200% 100%;
+  text-decoration: none;
+  animation: boiler-banner-sheen 5s ease-in-out infinite;
+  position: relative;
+  z-index: 20;
+}
+.boiler-banner__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.boiler-banner__badge {
+  background: var(--navy);
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.boiler-banner__text {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: 0.2px;
+}
+.boiler-banner__cta {
+  background: #fff;
+  color: var(--accent);
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 0.9rem;
+  padding: 8px 18px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+.boiler-banner:hover .boiler-banner__cta { transform: scale(1.06); }
+@keyframes boiler-banner-sheen {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boiler-banner { animation: none; }
+}
+@media (max-width: 640px) {
+  .boiler-banner__inner { padding: 12px 16px; gap: 8px; }
+  .boiler-banner__text { font-size: 0.92rem; }
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }

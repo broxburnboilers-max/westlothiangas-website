@@ -94,6 +94,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 14px 16px; font-size: 0.92rem; color: #2b3350; margin: 4px 0 20px;
     }
 
+    /* Optional service-plan add-on selector */
+    .plan-addon {
+      border: 1px solid #e3e7ee; border-radius: 12px; padding: 20px 22px; margin: 24px 0 28px;
+      background: #fafbfd; transition: box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+    .plan-addon.highlight { border-color: #ff6b00; box-shadow: 0 0 0 4px rgba(255,107,0,0.15); }
+    .plan-addon h3 { margin: 0 0 4px; border: none; padding: 0; font-size: 1.05rem; }
+    .plan-addon > p { margin: 0 0 14px; color: #7a8399; font-size: 0.9rem; }
+    .plan-addon__options { display: grid; gap: 10px; }
+    .plan-addon__option {
+      display: flex; align-items: flex-start; gap: 10px; border: 1px solid #e3e7ee;
+      border-radius: 10px; padding: 12px 14px; cursor: pointer; background: #fff;
+      font-size: 0.92rem; color: #2b3350;
+    }
+    .plan-addon__option:has(input:checked) { border-color: #001b5e; background: #f0f3fb; }
+    .plan-addon__option input { margin-top: 3px; }
+    .plan-addon__option strong { color: #001b5e; }
+    .plan-addon__option .plan-addon__badge {
+      display: inline-block; background: #fff2e6; color: #e05f00; font-weight: 700;
+      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.3px;
+      padding: 2px 7px; border-radius: 10px; margin-left: 8px;
+    }
+    .plan-addon__summary {
+      margin: 14px 0 0; padding: 12px 14px; background: #fff; border: 1px dashed #cbd3e3;
+      border-radius: 8px; font-size: 0.9rem; color: #001b5e; font-weight: 700;
+    }
+
     .agreement-doc__sigs {
       display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 12px;
     }
@@ -314,6 +341,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </label>
       </div>
 
+      <div class="plan-addon" id="planAddon">
+        <h3>Add an ongoing service plan? (optional)</h3>
+        <p>Bundle a service &amp; breakdown plan with your 0% finance instalment and pay both in one simple monthly payment.</p>
+        <div class="plan-addon__options">
+          <label class="plan-addon__option">
+            <input type="radio" name="planChoice" id="planNone" value="none" checked />
+            <span><strong>No thanks</strong> &mdash; just the 0% finance plan</span>
+          </label>
+          <label class="plan-addon__option">
+            <input type="radio" name="planChoice" id="planAnnual" value="annual" />
+            <span><strong>Annual Service</strong> &mdash; &pound;9.99/month<br />Annual boiler service to keep your warranty valid</span>
+          </label>
+          <label class="plan-addon__option">
+            <input type="radio" name="planChoice" id="planBreakdown" value="breakdown" />
+            <span><strong>Service &amp; Breakdown</strong> &mdash; &pound;19.99/month<span class="plan-addon__badge">Most popular</span><br />Annual service plus unlimited breakdown callouts, no excess fees</span>
+          </label>
+          <label class="plan-addon__option">
+            <input type="radio" name="planChoice" id="planFullcover" value="fullcover" />
+            <span><strong>Full Cover</strong> &mdash; &pound;29.99/month<br />Whole heating system, radiators, valves &amp; pump included</span>
+          </label>
+        </div>
+        <p class="plan-addon__summary" id="comboSummary"></p>
+      </div>
+
       <div class="agreement-form__sigpad">
         <label for="sigCanvas">Draw your signature below</label>
         <canvas id="sigCanvas" width="500" height="150"></canvas>
@@ -337,6 +388,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <button type="button" id="downloadBtn" class="agreement-btn agreement-btn--ghost">Download signed agreement (PDF)</button>
         <a href="https://buy.stripe.com/fZufZh6OIg1z0MTfpo8bS04" id="stripePayBtn" target="_blank" rel="noopener noreferrer" class="agreement-btn agreement-btn--primary">Pay first instalment with Stripe &rarr;</a>
       </div>
+      <p class="plan-addon__summary" id="successComboNote" style="max-width:480px;margin:16px auto 0;"></p>
     </section>
 
     <!-- Hidden Netlify form: enables Netlify Forms to capture each signed agreement.
@@ -371,13 +423,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       var params = new URLSearchParams(window.location.search);
       var totalParam = parseFloat(params.get('total'));
       var boilerParam = params.get('boiler');
+      var addplanParam = params.get('addplan');
+      var perInstalment = null;
 
       function formatGBP(amount) {
         return amount.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' });
       }
 
       if (!isNaN(totalParam) && totalParam > 0) {
-        var perInstalment = Math.round((totalParam / 12) * 100) / 100;
+        perInstalment = Math.round((totalParam / 12) * 100) / 100;
         var lastInstalment = Math.round((totalParam - perInstalment * 11) * 100) / 100;
 
         var totalEl = document.getElementById('totalPriceText');
@@ -398,11 +452,86 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         '2300.60': 'https://buy.stripe.com/4gM8wPc9202Bantelk8bS0b'  // Option 3 – Worcester 1000 30kW + EPH timer – £191.72/mo
       };
 
-      if (!isNaN(totalParam) && totalParam > 0) {
-        var stripeBtn = document.getElementById('stripePayBtn');
-        var matchedLink = STRIPE_LINKS_BY_TOTAL[totalParam.toFixed(2)];
-        if (stripeBtn && matchedLink) stripeBtn.href = matchedLink;
+      // Bundled 0% finance + service plan Stripe subscription links (2 line items each:
+      // the boiler instalment + the chosen plan's monthly fee), keyed by total then plan.
+      var STRIPE_LINKS_COMBO = {
+        '2832.80': {
+          annual: 'https://buy.stripe.com/8x200jeha3eN1QXfpo8bS0i',
+          breakdown: 'https://buy.stripe.com/4gM8wP1uo7v37bhelk8bS0j',
+          fullcover: 'https://buy.stripe.com/7sY5kD2ys02BfHNdhg8bS0k'
+        },
+        '2567.40': {
+          annual: 'https://buy.stripe.com/3cIcN53CweXvantcdc8bS0f',
+          breakdown: 'https://buy.stripe.com/dRmcN51uo4iR539a548bS0g',
+          fullcover: 'https://buy.stripe.com/14A14n8WQ9Db9jpelk8bS0h'
+        },
+        '2300.60': {
+          annual: 'https://buy.stripe.com/6oU7sLfle3eNfHN6SS8bS0c',
+          breakdown: 'https://buy.stripe.com/bJedR90qk3eNant3GG8bS0d',
+          fullcover: 'https://buy.stripe.com/eVqaEX6OI6qZ1QXcdc8bS0e'
+        }
+      };
+
+      var PLAN_INFO = {
+        none: { name: null, fee: 0 },
+        annual: { name: 'Annual Service', fee: 9.99 },
+        breakdown: { name: 'Service & Breakdown', fee: 19.99 },
+        fullcover: { name: 'Full Cover', fee: 29.99 }
+      };
+
+      var stripeBtn = document.getElementById('stripePayBtn');
+      var comboSummaryEl = document.getElementById('comboSummary');
+      var successComboNoteEl = document.getElementById('successComboNote');
+      var planAddonEl = document.getElementById('planAddon');
+      var totalKey = (!isNaN(totalParam) && totalParam > 0) ? totalParam.toFixed(2) : null;
+      var hasComboOptions = !!(totalKey && STRIPE_LINKS_COMBO[totalKey]);
+
+      function getSelectedPlan() {
+        var checked = document.querySelector('input[name="planChoice"]:checked');
+        return checked ? checked.value : 'none';
       }
+
+      function updateComboUI() {
+        var plan = getSelectedPlan();
+        var summaryText = '';
+        var link = null;
+
+        if (plan === 'none' || !totalKey) {
+          link = totalKey ? STRIPE_LINKS_BY_TOTAL[totalKey] : null;
+          if (perInstalment !== null) {
+            summaryText = 'Your monthly payment: ' + formatGBP(perInstalment) + ' (0% finance instalment only)';
+          }
+        } else {
+          var info = PLAN_INFO[plan];
+          var combo = STRIPE_LINKS_COMBO[totalKey];
+          link = combo ? combo[plan] : null;
+          if (perInstalment !== null && info) {
+            var combined = Math.round((perInstalment + info.fee) * 100) / 100;
+            summaryText = 'Your monthly payment: ' + formatGBP(combined) + ' (' + formatGBP(perInstalment) + ' finance instalment + ' + formatGBP(info.fee) + ' ' + info.name + ')';
+          }
+        }
+
+        if (stripeBtn && link) stripeBtn.href = link;
+        if (comboSummaryEl) comboSummaryEl.textContent = summaryText;
+        if (successComboNoteEl) successComboNoteEl.textContent = summaryText;
+      }
+
+      if (!hasComboOptions && planAddonEl) {
+        // Only the 3 quoted boiler options have bundled plan pricing set up —
+        // hide the add-on selector for the generic example / unmatched totals.
+        planAddonEl.style.display = 'none';
+      } else {
+        document.querySelectorAll('input[name="planChoice"]').forEach(function (radio) {
+          radio.addEventListener('change', updateComboUI);
+        });
+        if (addplanParam === '1' && planAddonEl) {
+          planAddonEl.classList.add('highlight');
+          setTimeout(function () { planAddonEl.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 300);
+          setTimeout(function () { planAddonEl.classList.remove('highlight'); }, 3000);
+        }
+      }
+
+      updateComboUI();
 
       if (boilerParam) {
         var boilerInput = document.getElementById('inputBoiler');

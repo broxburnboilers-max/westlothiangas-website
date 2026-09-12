@@ -219,11 +219,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </ul>
 
       <h3>3. Total Price &amp; 0% Interest</h3>
-      <p>The total price for the Works, inclusive of parts, labour and VAT (if applicable), is <strong>&pound;2,657.00</strong> (&ldquo;the Total Price&rdquo;). No interest, credit charges, or fees of any kind are added to the Total Price under this Agreement &mdash; the amount the Customer repays in total is exactly equal to the Total Price.</p>
+      <p>The total price for the Works, inclusive of parts, labour and VAT (if applicable), is <strong id="totalPriceText">&pound;2,657.00</strong> (&ldquo;the Total Price&rdquo;). No interest, credit charges, or fees of any kind are added to the Total Price under this Agreement &mdash; the amount the Customer repays in total is exactly equal to the Total Price.</p>
 
       <h3>4. Payment Plan</h3>
       <p>No separate deposit is charged. Instead, the first of twelve (12) instalments is payable upfront on the date of installation, and the remaining eleven (11) instalments are collected automatically by card, once a month, via Stripe.</p>
-      <div class="agreement-doc__schedule-note">
+      <div class="agreement-doc__schedule-note" id="scheduleNote">
         Instalments 1&ndash;11: &pound;221.42 each &middot; Final (12th) instalment: &pound;221.38 (adjusted to balance the account exactly to the Total Price) &middot; Total over 12 months: &pound;2,657.00
       </div>
       <ul>
@@ -335,7 +335,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p>Thanks &mdash; your copy is ready to download below, and we've kept a record on file. Click through to pay your first instalment securely and confirm your installation booking.</p>
       <div class="agreement-success__actions">
         <button type="button" id="downloadBtn" class="agreement-btn agreement-btn--ghost">Download signed agreement (PDF)</button>
-        <a href="https://buy.stripe.com/fZufZh6OIg1z0MTfpo8bS04" target="_blank" rel="noopener noreferrer" class="agreement-btn agreement-btn--primary">Pay first instalment with Stripe &rarr;</a>
+        <a href="https://buy.stripe.com/fZufZh6OIg1z0MTfpo8bS04" id="stripePayBtn" target="_blank" rel="noopener noreferrer" class="agreement-btn agreement-btn--primary">Pay first instalment with Stripe &rarr;</a>
       </div>
     </section>
 
@@ -365,6 +365,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
     (function () {
+      // Reflect a specific quote option's price when arriving via a "Sign up to 0% finance"
+      // link from the online quote page (?total=2832.80&boiler=Worcester%204000%2030kW).
+      // Falls back to the default £2,657.00 example figures when no params are present.
+      var params = new URLSearchParams(window.location.search);
+      var totalParam = parseFloat(params.get('total'));
+      var boilerParam = params.get('boiler');
+
+      function formatGBP(amount) {
+        return amount.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' });
+      }
+
+      if (!isNaN(totalParam) && totalParam > 0) {
+        var perInstalment = Math.round((totalParam / 12) * 100) / 100;
+        var lastInstalment = Math.round((totalParam - perInstalment * 11) * 100) / 100;
+
+        var totalEl = document.getElementById('totalPriceText');
+        if (totalEl) totalEl.textContent = formatGBP(totalParam);
+
+        var scheduleEl = document.getElementById('scheduleNote');
+        if (scheduleEl) {
+          scheduleEl.textContent = 'Instalments 1–11: ' + formatGBP(perInstalment) + ' each · Final (12th) instalment: ' + formatGBP(lastInstalment) + ' (adjusted to balance the account exactly to the Total Price) · Total over 12 months: ' + formatGBP(totalParam);
+        }
+      }
+
+      // Option-specific 0% finance Stripe subscription links, keyed by the exact
+      // total price passed in the ?total= param from boiler-quote.html. Falls back
+      // to the generic default link (already set as the href) when no match is found.
+      var STRIPE_LINKS_BY_TOTAL = {
+        '2832.80': 'https://buy.stripe.com/28EeVd3Cw16FfHN6SS8bS05', // Option 1 – Worcester 4000 30kW – £236.07/mo
+        '2567.40': 'https://buy.stripe.com/fZu3cv4GA8z75397WW8bS0a', // Option 2 – Worcester 2000 30kW – £213.95/mo
+        '2300.60': 'https://buy.stripe.com/4gM8wPc9202Bantelk8bS0b'  // Option 3 – Worcester 1000 30kW + EPH timer – £191.72/mo
+      };
+
+      if (!isNaN(totalParam) && totalParam > 0) {
+        var stripeBtn = document.getElementById('stripePayBtn');
+        var matchedLink = STRIPE_LINKS_BY_TOTAL[totalParam.toFixed(2)];
+        if (stripeBtn && matchedLink) stripeBtn.href = matchedLink;
+      }
+
+      if (boilerParam) {
+        var boilerInput = document.getElementById('inputBoiler');
+        if (boilerInput) boilerInput.value = boilerParam;
+      }
+
       var canvas = document.getElementById('sigCanvas');
       var ctx = canvas.getContext('2d');
       var drawing = false;

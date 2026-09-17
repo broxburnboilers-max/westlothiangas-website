@@ -659,9 +659,13 @@ img {
 .why-us__inner,
 .reviews__inner,
 .cta-section__inner,
-.footer__inner {
+.footer__inner,
+.cprt_foot{
   max-width: var(--max-w);
   margin: 0 auto;
+}
+.cprt_foot p{
+  text-align:center;
 }
 
 .section-heading {

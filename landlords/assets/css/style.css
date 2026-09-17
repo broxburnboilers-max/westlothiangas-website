@@ -543,7 +543,7 @@ footer.site-footer { background: var(--color-primary); color: color-mix(in oklab
 .footer-links a { font-size: var(--text-sm); color: color-mix(in oklab, var(--color-text-inverse) 75%, transparent); text-decoration: none; }
 .footer-links a:hover { color: var(--color-text-inverse); }
 .footer-note { font-size: var(--text-xs); color: color-mix(in oklab, var(--color-text-inverse) 55%, transparent); margin-top: var(--space-6); text-align: center; }
-
+.cprt_foot p{text-align:center}
 /* ---------- Sticky mobile CTA ---------- */
 .sticky-cta {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;

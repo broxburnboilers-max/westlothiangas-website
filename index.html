@@ -23,6 +23,234 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://westlothiangas.com/#organization",
+  "name": "West Lothian Gas",
+  "url": "https://westlothiangas.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "@id": "https://westlothiangas.com/#logo",
+    "url": "https://westlothiangas.com/assets/opt/logo-wlg.webp",
+    "contentUrl": "https://westlothiangas.com/assets/opt/logo-wlg.webp"
+  },
+  "telephone": "+44 131 581 8509",
+  "email": "westlothiangas@gmail.com"
+}
+</script>
+
+<!-- Website Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://westlothiangas.com/#website",
+  "url": "https://westlothiangas.com/",
+  "name": "West Lothian Gas",
+  "publisher": {
+    "@id": "https://westlothiangas.com/#organization"
+  },
+  "inLanguage": "en-GB"
+}
+</script>
+
+<!-- Local Business Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://westlothiangas.com/#localbusiness",
+  "name": "West Lothian Gas",
+  "url": "https://westlothiangas.com/",
+  "image": "https://westlothiangas.com/assets/opt/logo-wlg.webp",
+  "telephone": "+44 131 581 8509",
+  "email": "westlothiangas@gmail.com",
+  "description": "Gas and heating services for homeowners, landlords and letting agents, including new boiler installations, boiler servicing, boiler breakdown repairs, boiler cover plans, landlord gas safety certificates, gas cooker installations and hob installations.",
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "West Lothian"
+    },
+    {
+      "@type": "City",
+      "name": "Livingston"
+    },
+    {
+      "@type": "Place",
+      "name": "Broxburn"
+    },
+    {
+      "@type": "City",
+      "name": "Edinburgh"
+    }
+  ]
+}
+</script>
+
+<!-- Boiler Installation Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://westlothiangas.com/#boiler-installation",
+  "name": "New Boiler Installation",
+  "serviceType": "Boiler Installation",
+  "description": "New boiler installation services including combi, system and heat-only boiler installations.",
+  "provider": {
+    "@id": "https://westlothiangas.com/#localbusiness"
+  },
+  "areaServed": [
+    "West Lothian",
+    "Livingston",
+    "Broxburn",
+    "Edinburgh"
+  ],
+  "url": "https://westlothiangas.com/"
+}
+</script>
+
+<!-- Boiler Servicing Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://westlothiangas.com/#boiler-servicing",
+  "name": "Boiler Servicing",
+  "serviceType": "Boiler Servicing",
+  "provider": {
+    "@id": "https://westlothiangas.com/#localbusiness"
+  },
+  "areaServed": [
+    "West Lothian",
+    "Livingston",
+    "Broxburn",
+    "Edinburgh"
+  ],
+  "url": "https://westlothiangas.com/"
+}
+</script>
+
+<!-- Boiler Breakdown & Repair Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://westlothiangas.com/#boiler-repair",
+  "name": "Boiler Breakdown and Repair",
+  "serviceType": "Boiler Breakdown and Repair",
+  "description": "Boiler fault diagnosis and repair services for most makes and models.",
+  "provider": {
+    "@id": "https://westlothiangas.com/#localbusiness"
+  },
+  "areaServed": [
+    "West Lothian",
+    "Livingston",
+    "Broxburn",
+    "Edinburgh"
+  ],
+  "url": "https://westlothiangas.com/"
+}
+</script>
+
+<!-- Boiler Cover Plans Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://westlothiangas.com/#boiler-cover",
+  "name": "Boiler Cover Plans",
+  "serviceType": "Boiler Cover Plans",
+  "provider": {
+    "@id": "https://westlothiangas.com/#localbusiness"
+  },
+  "areaServed": [
+    "West Lothian",
+    "Livingston",
+    "Broxburn",
+    "Edinburgh"
+  ],
+  "url": "https://westlothiangas.com/"
+}
+</script>
+
+<!-- Landlord Gas Safety Certificate Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://westlothiangas.com/#landlord-gas-safety",
+  "name": "Landlord Gas Safety Certificates",
+  "serviceType": "Landlord Gas Safety Certificate",
+  "description": "Gas safety services for landlords and letting agents.",
+  "provider": {
+    "@id": "https://westlothiangas.com/#localbusiness"
+  },
+  "areaServed": [
+    "West Lothian",
+    "Livingston",
+    "Broxburn",
+    "Edinburgh"
+  ],
+  "url": "https://westlothiangas.com/landlords/"
+}
+</script>
+
+<!-- Gas Cooker Installation Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://westlothiangas.com/#gas-cooker-installation",
+  "name": "Gas Cooker Installation",
+  "serviceType": "Gas Cooker Installation",
+  "provider": {
+    "@id": "https://westlothiangas.com/#localbusiness"
+  },
+  "areaServed": [
+    "West Lothian",
+    "Livingston",
+    "Broxburn",
+    "Edinburgh"
+  ],
+  "url": "https://westlothiangas.com/"
+}
+</script>
+
+<!-- Hob Installation Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://westlothiangas.com/#hob-installation",
+  "name": "Gas Hob Installation",
+  "serviceType": "Gas Hob Installation",
+  "provider": {
+    "@id": "https://westlothiangas.com/#localbusiness"
+  },
+  "areaServed": [
+    "West Lothian",
+    "Livingston",
+    "Broxburn",
+    "Edinburgh"
+  ],
+  "url": "https://westlothiangas.com/"
+}
+</script>
+
+<!-- Logo Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "@id": "https://westlothiangas.com/#logo",
+  "name": "West Lothian Gas Logo",
+  "contentUrl": "https://westlothiangas.com/assets/opt/logo-wlg.webp",
+  "url": "https://westlothiangas.com/assets/opt/logo-wlg.webp"
+}
+</script>
 </head>
 <body>
   <a class="sr-only" href="#main-content">Skip to content</a>

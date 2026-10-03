@@ -2,14 +2,14 @@
 // agreement (PDF attached) to the business inbox.
 //
 // Required Netlify environment variables (Site configuration > Environment variables):
-//   GMAIL_USER          - the Gmail address that sends the email (e.g. westlothiangas@gmail.com)
+//   GMAIL_USER          - the Gmail address that sends the email (e.g. broxburnboilers@gmail.com)
 //   GMAIL_APP_PASSWORD  - a 16-character Google App Password for that account
 // Optional:
-//   CONTRACT_NOTIFY_TO  - override recipient (defaults to westlothiangas@gmail.com)
+//   CONTRACT_NOTIFY_TO  - override recipient (defaults to broxburnboilers@gmail.com)
 
 const nodemailer = require('nodemailer');
 
-const DEFAULT_TO = 'westlothiangas@gmail.com';
+const DEFAULT_TO = 'broxburnboilers@gmail.com';
 const MAX_PDF_BYTES = 4 * 1024 * 1024; // 4 MB safety cap
 
 function esc(s) {

@@ -679,14 +679,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           body: formData.toString()
         }).catch(function () { /* non-blocking — signing still succeeds even if the network call fails */ });
 
+        // Email a confirmation with the signed contract PDF attached to westlothiangas@gmail.com
+        try {
+          var signedDoc = buildAgreementPdf();
+          if (signedDoc) {
+            var planVal = getSelectedPlan();
+            var planInfo = PLAN_INFO[planVal];
+            var totalTextEl = document.getElementById('totalPriceText');
+            fetch('/.netlify/functions/send-contract', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                full_name: name,
+                installation_address: property,
+                phone: phone,
+                email: email,
+                boiler_model: boiler,
+                installation_date: installDate,
+                agreement_date: dateStr,
+                total_price: totalTextEl ? totalTextEl.textContent : '',
+                monthly_summary: comboSummaryEl ? comboSummaryEl.textContent : '',
+                service_plan: (planInfo && planInfo.name) ? planInfo.name + ' (' + formatGBP(planInfo.fee) + '/month)' : 'None',
+                pdf_base64: signedDoc.output('datauristring').split(',')[1]
+              })
+            }).catch(function () { /* non-blocking */ });
+          }
+        } catch (e) { /* non-blocking — never stop the customer signing */ }
+
         document.getElementById('agreementForm').style.display = 'none';
         document.getElementById('agreementSuccess').style.display = 'block';
         document.getElementById('agreementSuccess').scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
 
-      document.getElementById('downloadBtn').addEventListener('click', function () {
+      function buildAgreementPdf() {
         var jsPDFCtor = window.jspdf && window.jspdf.jsPDF;
-        if (!jsPDFCtor) { window.print(); return; }
+        if (!jsPDFCtor) return null;
         var doc = new jsPDFCtor({ unit: 'pt', format: 'a4' });
         var margin = 48;
         var pageWidth = doc.internal.pageSize.getWidth();
@@ -722,6 +749,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           try { doc.addImage(sigImg.src, 'PNG', margin, y, 160, 48); } catch (e) {}
         }
 
+        return doc;
+      }
+
+      document.getElementById('downloadBtn').addEventListener('click', function () {
+        var doc = buildAgreementPdf();
+        if (!doc) { window.print(); return; }
         doc.save('West-Lothian-Gas-Boiler-Install-0pct-Payment-Plan-Agreement.pdf');
       });
     })();

@@ -3,6 +3,9 @@ headers = []
 redirects = []
 
 [functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  external_node_modules = ["nodemailer"]
 
   [functions."*"]
 

@@ -1,0 +1,9 @@
+{
+  "name": "westlothiangas-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "West Lothian Gas website + Netlify Functions",
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}

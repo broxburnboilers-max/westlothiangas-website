@@ -176,3 +176,15 @@ a.wl-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); bor
   .gallery__grid .gallery__item--tall:last-child { grid-row: span 1; grid-column: span 3; }
 }
 .service-card__more { row-gap: 6px; }
+
+/* Gas safety section: stack on tablets/phones so text and photo aren't squeezed */
+.gas-safety__main-image { width: 100%; height: auto; display: block; }
+@media (max-width: 980px) {
+  .gas-safety__inner { grid-template-columns: 1fr !important; gap: 28px; }
+  .gas-safety__media { max-width: 640px; width: 100%; margin: 0 auto; }
+  .gas-safety__main-image { aspect-ratio: 4 / 3; height: auto; object-fit: cover; }
+}
+@media (max-width: 700px) {
+  .gas-safety__main-image { aspect-ratio: 4 / 3; }
+  .gas-safety__thumbs img { height: 140px; }
+}

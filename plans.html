@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="plans.css" />
   <link rel="stylesheet" href="site-chrome.css" />
   <link rel="stylesheet" href="layout.css" />
+  <link rel="stylesheet" href="finance-options.css" />
 </head>
 <body id="top">
   <a class="sr-only" href="#main-content">Skip to content</a>
@@ -67,10 +68,10 @@
               <div>
                 <p class="wlg-menu__title">Boilers</p>
                 <ul role="list">
-                  <li><a href="/services/boiler-installation/">New boiler installation<span>Guide prices, 0% finance</span></a></li>
+                  <li><a href="/services/boiler-installation/">New boiler installation<span>Prices &amp; 0% monthly costs</span></a></li>
                   <li><a href="/services/boiler-repairs/">Boiler repairs<span>Breakdowns &amp; emergencies</span></a></li>
                   <li><a href="/services/boiler-servicing/">Boiler servicing<span>Annual service &amp; report</span></a></li>
-                  <li><a href="/plans.html#plans-finance">0% boiler finance<span>Spread the cost over 12 months</span></a></li>
+                  <li><a href="/plans.html#plans-finance">0% boiler finance<span>3 options from &pound;191.72/month</span></a></li>
                 </ul>
               </div>
               <div>
@@ -176,8 +177,8 @@
 
   <a href="#plans-finance" class="plans-offerbar" aria-label="See our 0% interest boiler installation offer">
     <span class="plans-offerbar__badge">Offer</span>
-    <span class="plans-offerbar__text"><strong>0% interest</strong> over 12 months on new boiler installations</span>
-    <span class="plans-offerbar__cta">See offer &darr;</span>
+    <span class="plans-offerbar__text"><strong>0% interest</strong> new boilers from &pound;191.72/month &mdash; 3 options</span>
+    <span class="plans-offerbar__cta">Compare &darr;</span>
   </a>
 
   <main id="main-content">
@@ -303,21 +304,77 @@
       </div>
     </section>
 
-    <section class="plans-finance" id="plans-finance">
-      <div class="plans-finance__inner">
-        <span class="plans-finance__ribbon">Sale &mdash; 0% APR</span>
-        <span class="plans-finance__badge">0% finance</span>
-        <h2 class="plans-finance__title">New boiler? Spread the cost over 12 months at 0%</h2>
-        <p class="plans-finance__text">Getting a new boiler installed doesn't have to mean paying it all upfront. Spread your installation cost over 12 equal monthly instalments at 0% interest on a simple signed agreement &mdash; no credit checks, no hidden fees, no interest added.</p>
-        <ul class="plans-finance__points">
-          <li>0% interest &mdash; you only ever pay the agreed Total Price, nothing more</li>
-          <li>12 fixed monthly instalments, collected automatically by card</li>
-          <li>First instalment paid upfront on your installation date</li>
-          <li>Simple agreement, signed online before your installation is booked</li>
-          <li>Free early repayment at any time, no settlement fee</li>
+    <section class="fin" id="plans-finance" aria-labelledby="plans-finance-title">
+      <div class="fin__inner">
+        <div class="fin__head">
+          <span class="fin__badge">0% interest boiler finance</span>
+          <h2 class="fin__title" id="plans-finance-title">New boiler from &pound;191.72 a month &mdash; choose 1 of 3 options</h2>
+          <p class="fin__lead">Pick your Worcester boiler below and spread the cost over 12 equal monthly payments at 0%. You only ever pay the boiler price &mdash; nothing more.</p>
+        </div>
+        <ul class="fin__facts">
+          <li>0% interest</li><li>No deposit</li><li>No credit checks</li><li>No hidden fees</li><li>Free early repayment</li>
         </ul>
-        <a class="plan-btn plan-btn--primary plans-finance__btn" href="boiler-install-payment-plan-agreement.html">Read &amp; sign agreement</a>
-        <p class="plans-finance__note">Read and sign the agreement online, then pay your first instalment securely via Stripe to confirm your installation booking.</p>
+        <div class="fin__grid">
+      <article class="fin-card fin-card--top" id="finance-option-1">
+        <span class="fin-card__tag">Longest warranty</span>
+        <p class="fin-card__opt">Option 1</p>
+        <h3 class="fin-card__name">Worcester 4000 30kW</h3>
+        <p class="fin-card__monthly"><strong>&pound;236.07</strong><span>a month for 12 months &middot; 0% interest</span></p>
+        <table class="fin-card__table">
+          <tr><th scope="row">Boiler installed</th><td>&pound;2,832.80</td></tr>
+          <tr class="is-zero"><th scope="row">Interest &amp; fees</th><td>&pound;0.00</td></tr>
+          <tr class="is-zero"><th scope="row">Deposit</th><td>&pound;0.00</td></tr>
+          <tr><th scope="row">1st payment (confirms booking)</th><td>&pound;236.07</td></tr>
+          <tr><th scope="row">Then 11 monthly payments</th><td>&pound;236.07</td></tr>
+          <tr><th scope="row"><strong>Total you pay</strong></th><td><strong>&pound;2,832.80</strong></td></tr>
+        </table>
+        <ul class="fin-card__list"><li>Worcester 4000 30kW combi boiler</li><li>10-year manufacturer warranty*</li><li>Comfort II control</li><li>Horizontal flue, system filter, flush &amp; inhibitor</li></ul>
+        <a class="fin-card__btn" href="/boiler-install-payment-plan-agreement.html?total=2832.80&boiler=Worcester%204000%2030kW">Choose Option 1<small>&pound;236.07/month &middot; sign online</small></a>
+        <a class="fin-card__alt" href="/boiler-install-payment-plan-agreement.html?total=2832.80&boiler=Worcester%204000%2030kW&amp;addplan=1">or add a service plan to this option &rarr;</a>
+      </article>
+      <article class="fin-card" id="finance-option-2">
+        <span class="fin-card__tag">Mid-range</span>
+        <p class="fin-card__opt">Option 2</p>
+        <h3 class="fin-card__name">Worcester 2000 30kW</h3>
+        <p class="fin-card__monthly"><strong>&pound;213.95</strong><span>a month for 12 months &middot; 0% interest</span></p>
+        <table class="fin-card__table">
+          <tr><th scope="row">Boiler installed</th><td>&pound;2,567.40</td></tr>
+          <tr class="is-zero"><th scope="row">Interest &amp; fees</th><td>&pound;0.00</td></tr>
+          <tr class="is-zero"><th scope="row">Deposit</th><td>&pound;0.00</td></tr>
+          <tr><th scope="row">1st payment (confirms booking)</th><td>&pound;213.95</td></tr>
+          <tr><th scope="row">Then 11 monthly payments</th><td>&pound;213.95</td></tr>
+          <tr><th scope="row"><strong>Total you pay</strong></th><td><strong>&pound;2,567.40</strong></td></tr>
+        </table>
+        <ul class="fin-card__list"><li>Worcester 2000 30kW combi boiler</li><li>7-year manufacturer warranty*</li><li>Comfort II control</li><li>Horizontal flue, system filter, flush &amp; inhibitor</li></ul>
+        <a class="fin-card__btn" href="/boiler-install-payment-plan-agreement.html?total=2567.40&boiler=Worcester%202000%2030kW">Choose Option 2<small>&pound;213.95/month &middot; sign online</small></a>
+        <a class="fin-card__alt" href="/boiler-install-payment-plan-agreement.html?total=2567.40&boiler=Worcester%202000%2030kW&amp;addplan=1">or add a service plan to this option &rarr;</a>
+      </article>
+      <article class="fin-card" id="finance-option-3">
+        <span class="fin-card__tag">Lowest monthly cost</span>
+        <p class="fin-card__opt">Option 3</p>
+        <h3 class="fin-card__name">Worcester 1000 30kW + EPH timer</h3>
+        <p class="fin-card__monthly"><strong>&pound;191.72</strong><span>a month for 12 months &middot; 0% interest</span></p>
+        <table class="fin-card__table">
+          <tr><th scope="row">Boiler installed</th><td>&pound;2,300.60</td></tr>
+          <tr class="is-zero"><th scope="row">Interest &amp; fees</th><td>&pound;0.00</td></tr>
+          <tr class="is-zero"><th scope="row">Deposit</th><td>&pound;0.00</td></tr>
+          <tr><th scope="row">1st payment (confirms booking)</th><td>&pound;191.72</td></tr>
+          <tr><th scope="row">Then 11 monthly payments</th><td>&pound;191.72</td></tr>
+          <tr><th scope="row"><strong>Total you pay</strong></th><td><strong>&pound;2,300.60</strong></td></tr>
+        </table>
+        <ul class="fin-card__list"><li>Worcester 1000 30kW combi boiler</li><li>5-year manufacturer warranty*</li><li>EPH timer</li><li>Horizontal flue, system filter, flush &amp; inhibitor</li></ul>
+        <a class="fin-card__btn" href="/boiler-install-payment-plan-agreement.html?total=2300.60&boiler=Worcester%201000%2030kW%20%2B%20EPH%20timer">Choose Option 3<small>&pound;191.72/month &middot; sign online</small></a>
+        <a class="fin-card__alt" href="/boiler-install-payment-plan-agreement.html?total=2300.60&boiler=Worcester%201000%2030kW%20%2B%20EPH%20timer&amp;addplan=1">or add a service plan to this option &rarr;</a>
+      </article>
+        </div>
+        <ol class="fin__steps">
+          <li><strong>Choose your option</strong>Tap the button on the boiler that suits you.</li>
+          <li><strong>Sign online</strong>Add your details and sign the simple 0% agreement &mdash; takes a few minutes.</li>
+          <li><strong>Pay your 1st instalment</strong>Pay securely by card to confirm your booking. The other 11 are collected monthly.</li>
+        </ol>
+        <p class="fin__plans">Want your boiler looked after too? Add Annual Service (+&pound;9.99), Service &amp; Breakdown (+&pound;19.99) or Full Cover (+&pound;29.99) and pay it all in one monthly payment.</p>
+        <p class="fin__small">*Warranty requires the boiler to be serviced once a year by a Gas Safe registered engineer. Prices are for a standard like-for-like combi installation and are confirmed in writing after a free, no-obligation survey. Monthly figures are the total divided by 12; the final payment may differ by a few pence so the total matches exactly (Option 1: final payment &pound;236.03, Option 3: &pound;191.68). A &pound;20 admin fee may apply to a missed or returned payment.</p>
+        <p class="fin__help">Not sure which to choose? <a href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20some%20advice%20on%20which%200%25%20finance%20boiler%20option%20to%20choose" target="_blank" rel="noopener noreferrer">Ask us on WhatsApp</a> or call <a href="tel:01315818509">0131 581 8509</a>.</p>
       </div>
     </section>
 
@@ -397,7 +454,7 @@
       <div class="wlg-prefoot__item"><span class="wlg-prefoot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><strong>Gas Safe registered</strong><span>Fully registered and insured</span></div></div>
       <div class="wlg-prefoot__item"><span class="wlg-prefoot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><div><strong>Fast local response</strong><span>Often same or next day</span></div></div>
       <div class="wlg-prefoot__item"><span class="wlg-prefoot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16v10H4z"/><path d="M8 12h8"/></svg></span><div><strong>Clear pricing</strong><span>No hidden fees</span></div></div>
-      <div class="wlg-prefoot__item"><span class="wlg-prefoot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><div><strong>0% boiler finance</strong><span><a href="/plans.html#plans-finance">Spread the cost over 12 months</a></span></div></div>
+      <div class="wlg-prefoot__item"><span class="wlg-prefoot__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><div><strong>0% boiler finance</strong><span><a href="/plans.html#plans-finance">3 options from &pound;191.72/month</a></span></div></div>
     </div>
   </section>
 

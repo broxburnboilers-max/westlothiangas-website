@@ -51,6 +51,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-family: 'Lato', sans-serif; font-weight: 900; color: #001b5e;
       font-size: clamp(1.6rem, 4vw, 2.1rem); line-height: 1.2; margin: 0 0 12px;
     }
+    .opt-picker { background: #fff7f0; border: 2px solid #ff6b00; border-radius: 14px; padding: 24px 20px; margin: 0 0 28px; }
+    .opt-picker h2 { margin: 0 0 6px; font-family: 'Lato', sans-serif; font-weight: 900; color: #001b5e; font-size: 1.3rem; }
+    .opt-picker > p { margin: 0 0 16px; color: #2d3a55; }
+    .opt-picker__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .opt-picker__card { display: flex; flex-direction: column; gap: 4px; background: #fff; border: 2px solid #e3e7f0; border-radius: 12px; padding: 16px; text-decoration: none; color: #001b5e; transition: border-color .15s; }
+    .opt-picker__card:hover, .opt-picker__card:focus-visible { border-color: #ff6b00; }
+    .opt-picker__opt { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: #8a94a8; }
+    .opt-picker__card strong { font-family: 'Lato', sans-serif; font-size: 1rem; }
+    .opt-picker__m { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 1.7rem; color: #ff6b00; }
+    .opt-picker__m small { font-size: 0.85rem; color: #2d3a55; font-weight: 700; }
+    .opt-picker__t { font-size: 0.85rem; color: #2d3a55; }
+    .opt-picker__note { margin: 14px 0 0; font-size: 0.85rem; color: #6b7590; }
+    .opt-picker__note a { color: #001b5e; font-weight: 700; }
+    @media (max-width: 720px) { .opt-picker__grid { grid-template-columns: 1fr; } }
     .agreement-hero p { color: #444f6a; font-size: 1.02rem; line-height: 1.55; margin: 0 0 32px; }
 
     /* Document card */
@@ -212,6 +226,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h1>Boiler Install 0% Interest Payment Plan Agreement</h1>
       <p>Read the agreement below, add your details and signature, and you'll be able to download your signed copy and pay your first instalment securely to confirm your installation.</p>
     </div>
+
+
+    <section class="opt-picker" id="optionPicker" hidden aria-labelledby="optPickerTitle">
+      <h2 id="optPickerTitle">Step 1: choose your boiler option</h2>
+      <p>Pick one of our 3 Worcester options to see your exact 0% monthly payment in the agreement below.</p>
+      <div class="opt-picker__grid">
+        <a class="opt-picker__card" href="?total=2832.80&amp;boiler=Worcester%204000%2030kW"><span class="opt-picker__opt">Option 1 &middot; 10-yr warranty</span><strong>Worcester 4000 30kW</strong><span class="opt-picker__m">&pound;236.07<small>/month</small></span><span class="opt-picker__t">Total &pound;2,832.80 &middot; 0% interest</span></a>
+        <a class="opt-picker__card" href="?total=2567.40&amp;boiler=Worcester%202000%2030kW"><span class="opt-picker__opt">Option 2 &middot; 7-yr warranty</span><strong>Worcester 2000 30kW</strong><span class="opt-picker__m">&pound;213.95<small>/month</small></span><span class="opt-picker__t">Total &pound;2,567.40 &middot; 0% interest</span></a>
+        <a class="opt-picker__card" href="?total=2300.60&amp;boiler=Worcester%201000%2030kW%20%2B%20EPH%20timer"><span class="opt-picker__opt">Option 3 &middot; 5-yr warranty</span><strong>Worcester 1000 30kW + EPH timer</strong><span class="opt-picker__m">&pound;191.72<small>/month</small></span><span class="opt-picker__t">Total &pound;2,300.60 &middot; 0% interest</span></a>
+      </div>
+      <p class="opt-picker__note">Had a different price quoted after your survey? Use the link we sent you, or <a href="https://wa.me/447961768920?text=Hi%2C%20I%27d%20like%20my%200%25%20finance%20agreement%20link" target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.</p>
+    </section>
 
     <article class="agreement-doc" id="agreementDoc">
       <div class="agreement-doc__letterhead">
@@ -430,6 +456,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         return amount.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' });
       }
 
+      if (isNaN(totalParam) || totalParam <= 0) {
+        var pickerEl = document.getElementById('optionPicker');
+        if (pickerEl) pickerEl.hidden = false;
+      }
       if (!isNaN(totalParam) && totalParam > 0) {
         perInstalment = Math.round((totalParam / 12) * 100) / 100;
         var lastInstalment = Math.round((totalParam - perInstalment * 11) * 100) / 100;

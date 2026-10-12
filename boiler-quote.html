@@ -98,6 +98,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .quote-option__price { text-align: right; white-space: nowrap; }
     .quote-option__amount { display: block; font-family: 'Lato', sans-serif; font-weight: 900; font-size: 1.15rem; color: #ff6b00; }
     .quote-option__label { display: block; font-size: 0.78rem; color: #8a94a8; }
+    .quote-option__monthly { display: block; margin-top: 8px; font-size: 0.85rem; line-height: 1.35; color: #001b5e; }
+    .quote-option__monthly strong { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 1.05rem; color: #1a8a3a; }
+    @media (max-width: 560px) {
+      .quote-option { flex-direction: column; grid-template-columns: 1fr; }
+      .quote-option__price { text-align: left; white-space: normal; }
+    }
+    .quote-options__intro { margin: 0 0 14px; font-size: 0.95rem; color: #2d3a55; }
     .quote-option__warranty { font-size: 0.85rem; font-weight: 700; color: #001b5e; margin: 6px 0 10px; }
     .quote-option__finance-btn {
       display: inline-block; background: #ff6b00; color: #fff; font-weight: 700; font-size: 0.85rem;
@@ -253,7 +260,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <tr><th>Quote date</th><td id="fillDate" class="placeholder">Set automatically when you sign</td></tr>
       </table>
 
-      <h3>Your options</h3>
+      <h3 id="options">Your options</h3>
+      <p class="quote-options__intro"><strong>Pay in full or spread the cost at 0%.</strong> Each option shows the total price and the 12-month 0% monthly cost &mdash; no deposit, no interest, no credit checks.</p>
 
       <div class="quote-option" data-option="1">
         <div class="quote-option__body">
@@ -263,6 +271,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="quote-option__price">
           <span class="quote-option__amount">&pound;2,832.80</span>
           <span class="quote-option__label">total price</span>
+          <span class="quote-option__monthly">or <strong>&pound;236.07</strong>/month<br />for 12 months at 0%</span>
         </div>
       </div>
       <p class="quote-option__warranty">10-year manufacturer warranty*</p>
@@ -277,6 +286,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="quote-option__price">
           <span class="quote-option__amount">&pound;2,567.40</span>
           <span class="quote-option__label">total price</span>
+          <span class="quote-option__monthly">or <strong>&pound;213.95</strong>/month<br />for 12 months at 0%</span>
         </div>
       </div>
       <p class="quote-option__warranty">7-year manufacturer warranty*</p>
@@ -291,6 +301,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="quote-option__price">
           <span class="quote-option__amount">&pound;2,300.60</span>
           <span class="quote-option__label">total price</span>
+          <span class="quote-option__monthly">or <strong>&pound;191.72</strong>/month<br />for 12 months at 0%</span>
         </div>
       </div>
       <p class="quote-option__warranty">5-year manufacturer warranty*</p>
@@ -322,7 +333,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <li>Collected automatically by card, signed online</li>
             <li>Free early repayment at any time, no settlement fee</li>
           </ul>
-          <a href="boiler-install-payment-plan-agreement.html" class="finance-btn finance-btn--orange" target="_blank" rel="noopener noreferrer">Sign up to 0% finance &rarr;</a>
+          <a href="#options" class="finance-btn finance-btn--orange">Choose your option above &uarr;</a>
         </div>
         <div class="finance-col">
           <h4>Boiler cover plans</h4>

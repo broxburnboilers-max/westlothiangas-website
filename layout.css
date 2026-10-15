@@ -188,3 +188,14 @@ a.wl-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); bor
   .gas-safety__main-image { aspect-ratio: 4 / 3; }
   .gas-safety__thumbs img { height: 140px; }
 }
+
+/* Homepage: pay-by-card strip */
+.paystrip { background: #001b5e; padding: 26px 20px; border-top: 4px solid #ff6b00; border-bottom: 4px solid #ff6b00; }
+.paystrip__inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.paystrip__badge { display: inline-block; background: #ff6b00; color: #fff; font: 900 .75rem/1 'Lato', sans-serif; letter-spacing: .08em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; }
+.paystrip__title { color: #fff; font: 900 1.6rem/1.2 'Lato', sans-serif; margin: 10px 0 6px; }
+.paystrip__sub { color: #dfe6ff; margin: 0; font-size: 1rem; max-width: 620px; }
+.paystrip__btn { flex: none; display: block; text-align: center; text-decoration: none; background: #ff6b00; color: #fff; border-radius: 12px; padding: 16px 30px; font: 900 1.25rem/1.2 'Lato', sans-serif; box-shadow: 0 8px 22px rgba(255,107,0,.4); }
+.paystrip__btn:hover, .paystrip__btn:focus-visible { background: #e05f00; color: #fff; }
+.paystrip__btn small { display: block; font-weight: 700; font-size: .82rem; margin-top: 4px; opacity: .92; }
+@media (max-width: 760px) { .paystrip__inner { flex-direction: column; align-items: stretch; text-align: center; } .paystrip__title { font-size: 1.35rem; } }

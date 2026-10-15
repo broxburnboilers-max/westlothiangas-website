@@ -118,21 +118,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .quote-option__combo-btn:hover { background: #001b5e; color: #fff; }
 
-    .quote-pay {
-      display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
-      background: #f4f7ff; border: 1px solid #d6e0ff; border-radius: 10px;
-      padding: 16px 18px; margin: -8px 0 26px;
+    /* ===== Pay in full by card (very prominent) ===== */
+    .paycard-hero-btn {
+      display: inline-block; margin-top: 16px; background: #ff6b00; color: #fff; font-weight: 800;
+      font-size: 1.1rem; padding: 14px 26px; border-radius: 10px; text-decoration: none;
+      box-shadow: 0 6px 18px rgba(255,107,0,.35);
     }
-    .quote-pay__qr { width: 132px; height: 132px; background: #fff; border-radius: 8px; padding: 4px; flex: none; }
-    .quote-pay__text { flex: 1 1 220px; }
-    .quote-pay__text h5 { margin: 0 0 4px; font-size: 1rem; color: #001b5e; }
-    .quote-pay__text p { margin: 0 0 10px; font-size: 0.88rem; color: #3a4560; }
-    .quote-pay__btn {
-      display: inline-block; background: #001b5e; color: #fff; font-weight: 700; font-size: 0.9rem;
-      padding: 10px 18px; border-radius: 8px; text-decoration: none;
+    .paycard-hero-btn:hover { background: #e05f00; }
+    .paysection {
+      background: #001b5e; color: #fff; border-radius: 16px; padding: 28px 24px 26px; margin: 22px 0 32px;
+      box-shadow: 0 10px 30px rgba(0,27,94,.25);
     }
-    .quote-pay__btn:hover { background: #ff6b00; }
-    @media (max-width: 640px) { .quote-pay__qr { display: none; } }
+    .paysection h2 { color: #fff; margin: 0 0 6px; font-size: 1.7rem; text-align: center; }
+    .paysection__sub { text-align: center; margin: 0 auto 22px; max-width: 560px; color: #dfe6ff; font-size: 1rem; }
+    .paysection__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 760px) { .paysection__grid { grid-template-columns: 1fr; } }
+    .paycard {
+      background: #fff; color: #001b5e; border-radius: 12px; padding: 18px 16px; text-align: center;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .paycard__opt { font-size: .8rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #c24f00; }
+    .paycard__name { font-weight: 700; font-size: 1rem; margin: 4px 0 2px; line-height: 1.3; min-height: 2.6em; display: flex; align-items: center; justify-content: center; }
+    .paycard__price { font-size: 2rem; font-weight: 800; line-height: 1.1; margin: 6px 0 12px; }
+    .paycard__qr { display: block; width: 190px; height: 190px; max-width: 100%; border: 3px solid #001b5e; border-radius: 10px; padding: 4px; background: #fff; box-sizing: border-box; }
+    .paycard__scan { font-size: .85rem; color: #3a4560; margin: 8px 0 14px; }
+    .paybtn {
+      display: block; width: 100%; box-sizing: border-box; background: #ff6b00; color: #fff !important; font-weight: 800;
+      font-size: 1.1rem; padding: 15px 14px; border-radius: 10px; text-decoration: none; text-align: center;
+      box-shadow: 0 6px 16px rgba(255,107,0,.35); margin-top: auto;
+    }
+    .paybtn:hover { background: #e05f00; }
+    .paysection__trust { text-align: center; margin: 18px 0 0; font-size: .9rem; color: #dfe6ff; }
+    .optpay {
+      display: flex; align-items: center; gap: 22px; background: #fff4eb; border: 3px solid #ff6b00;
+      border-radius: 14px; padding: 18px 20px; margin: -6px 0 30px;
+    }
+    .optpay__qr { display: block; width: 170px; height: 170px; background: #fff; border-radius: 10px; padding: 4px; border: 2px solid #001b5e; box-sizing: border-box; }
+    .optpay > a { flex: none; }
+    .optpay__body { flex: 1; }
+    .optpay__body h4 { margin: 0 0 4px; font-size: 1.25rem; color: #001b5e; }
+    .optpay__price { font-size: 1.9rem; font-weight: 800; color: #001b5e; margin: 0 0 6px; }
+    .optpay__body p { margin: 0 0 12px; font-size: .92rem; color: #3a4560; }
+    @media (max-width: 640px) {
+      .optpay { flex-direction: column; text-align: center; gap: 12px; }
+      .optpay__qr { width: 150px; height: 150px; }
+    }
 
     .agreement-doc__callout {
       background: #fff8ec; border: 1px solid #ffe1b0; border-radius: 10px;
@@ -252,7 +282,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <span class="agreement-hero__badge">Free quotation</span>
       <h1>Boiler Installation Quotation</h1>
       <p>Review your boiler installation options and pricing below. Choose an option, add your details and signature, then download your copy. All prices shown are indicative and subject to survey.</p>
+      <a class="paycard-hero-btn" href="#pay-by-card">Pay in full by card &darr;</a>
     </div>
+
+    <section class="paysection" id="pay-by-card" aria-labelledby="payHeading">
+      <h2 id="payHeading">Pay in full by card</h2>
+      <p class="paysection__sub">Choose your option and pay securely by debit card, credit card, Apple Pay or Google Pay. Scan the QR code with your phone camera, or tap the button.</p>
+      <div class="paysection__grid">
+          <div class="paycard">
+            <span class="paycard__opt">Option 1</span>
+            <span class="paycard__name">Worcester 4000 30kW</span>
+            <span class="paycard__price">&pound;2,832.80</span>
+            <a href="https://buy.stripe.com/6oU28rflecPnfHN2CC8bS0p" target="_blank" rel="noopener noreferrer"><img class="paycard__qr" src="assets/pay-option1-qr.svg" alt="Scan to pay Option 1, &pound;2,832.80, by card" width="190" height="190" /></a>
+            <p class="paycard__scan">Scan with your phone camera</p>
+            <a class="paybtn" href="https://buy.stripe.com/6oU28rflecPnfHN2CC8bS0p" target="_blank" rel="noopener noreferrer">Pay by card &rarr;</a>
+          </div>
+          <div class="paycard">
+            <span class="paycard__opt">Option 2</span>
+            <span class="paycard__name">Worcester 2000 30kW</span>
+            <span class="paycard__price">&pound;2,567.40</span>
+            <a href="https://buy.stripe.com/7sY5kD7SM16Fant0uu8bS0o" target="_blank" rel="noopener noreferrer"><img class="paycard__qr" src="assets/pay-option2-qr.svg" alt="Scan to pay Option 2, &pound;2,567.40, by card" width="190" height="190" /></a>
+            <p class="paycard__scan">Scan with your phone camera</p>
+            <a class="paybtn" href="https://buy.stripe.com/7sY5kD7SM16Fant0uu8bS0o" target="_blank" rel="noopener noreferrer">Pay by card &rarr;</a>
+          </div>
+          <div class="paycard">
+            <span class="paycard__opt">Option 3</span>
+            <span class="paycard__name">Worcester 1000 30kW + EPH timer</span>
+            <span class="paycard__price">&pound;2,300.60</span>
+            <a href="https://buy.stripe.com/cNidR9c92dTrant7WW8bS0n" target="_blank" rel="noopener noreferrer"><img class="paycard__qr" src="assets/pay-option3-qr.svg" alt="Scan to pay Option 3, &pound;2,300.60, by card" width="190" height="190" /></a>
+            <p class="paycard__scan">Scan with your phone camera</p>
+            <a class="paybtn" href="https://buy.stripe.com/cNidR9c92dTrant7WW8bS0n" target="_blank" rel="noopener noreferrer">Pay by card &rarr;</a>
+          </div>
+      </div>
+      <p class="paysection__trust">&#128274; Secure checkout by Stripe &middot; Prefer to spread the cost? See the 0% finance options below.</p>
+    </section>
 
     <article class="agreement-doc" id="quoteDoc">
       <div class="agreement-doc__letterhead">
@@ -293,6 +356,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p class="quote-option__warranty">10-year manufacturer warranty*</p>
       <a href="boiler-install-payment-plan-agreement.html?total=2832.80&boiler=Worcester%204000%2030kW" class="quote-option__finance-btn" target="_blank" rel="noopener noreferrer">Sign up to 0% finance for Option 1 &rarr;</a>
       <a href="boiler-install-payment-plan-agreement.html?total=2832.80&boiler=Worcester%204000%2030kW&addplan=1" class="quote-option__combo-btn" target="_blank" rel="noopener noreferrer">+ Add a service plan too &rarr;</a>
+      <div class="optpay">
+        <a href="https://buy.stripe.com/6oU28rflecPnfHN2CC8bS0p" target="_blank" rel="noopener noreferrer"><img class="optpay__qr" src="assets/pay-option1-qr.svg" alt="Scan to pay Option 1 by card" width="170" height="170" /></a>
+        <div class="optpay__body">
+          <h4>Pay Option 1 in full by card</h4>
+          <div class="optpay__price">&pound;2,832.80</div>
+          <p>Debit or credit card, Apple Pay or Google Pay. Scan the QR code or tap below.</p>
+          <a class="paybtn" href="https://buy.stripe.com/6oU28rflecPnfHN2CC8bS0p" target="_blank" rel="noopener noreferrer">Pay &pound;2,832.80 by card &rarr;</a>
+        </div>
+      </div>
 
       <div class="quote-option" data-option="2">
         <div class="quote-option__body">
@@ -308,12 +380,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p class="quote-option__warranty">7-year manufacturer warranty*</p>
       <a href="boiler-install-payment-plan-agreement.html?total=2567.40&boiler=Worcester%202000%2030kW" class="quote-option__finance-btn" target="_blank" rel="noopener noreferrer">Sign up to 0% finance for Option 2 &rarr;</a>
       <a href="boiler-install-payment-plan-agreement.html?total=2567.40&boiler=Worcester%202000%2030kW&addplan=1" class="quote-option__combo-btn" target="_blank" rel="noopener noreferrer">+ Add a service plan too &rarr;</a>
-      <div class="quote-pay">
-        <img class="quote-pay__qr" src="assets/pay-option2-qr.svg" alt="QR code to pay for Option 2 by card" width="132" height="132" />
-        <div class="quote-pay__text">
-          <h5>Pay Option 2 in full by card &mdash; &pound;2,567.40</h5>
-          <p>Pay securely by debit or credit card, Apple Pay or Google Pay through Stripe. On a computer, scan the QR code with your phone camera.</p>
-          <a href="https://buy.stripe.com/4gM4gzeha9Db5395OO8bS0m" class="quote-pay__btn" target="_blank" rel="noopener noreferrer">Pay &pound;2,567.40 by card &rarr;</a>
+      <div class="optpay">
+        <a href="https://buy.stripe.com/7sY5kD7SM16Fant0uu8bS0o" target="_blank" rel="noopener noreferrer"><img class="optpay__qr" src="assets/pay-option2-qr.svg" alt="Scan to pay Option 2 by card" width="170" height="170" /></a>
+        <div class="optpay__body">
+          <h4>Pay Option 2 in full by card</h4>
+          <div class="optpay__price">&pound;2,567.40</div>
+          <p>Debit or credit card, Apple Pay or Google Pay. Scan the QR code or tap below.</p>
+          <a class="paybtn" href="https://buy.stripe.com/7sY5kD7SM16Fant0uu8bS0o" target="_blank" rel="noopener noreferrer">Pay &pound;2,567.40 by card &rarr;</a>
         </div>
       </div>
 
@@ -331,6 +404,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p class="quote-option__warranty">5-year manufacturer warranty*</p>
       <a href="boiler-install-payment-plan-agreement.html?total=2300.60&boiler=Worcester%201000%2030kW%20%2B%20EPH%20timer" class="quote-option__finance-btn" target="_blank" rel="noopener noreferrer">Sign up to 0% finance for Option 3 &rarr;</a>
       <a href="boiler-install-payment-plan-agreement.html?total=2300.60&boiler=Worcester%201000%2030kW%20%2B%20EPH%20timer&addplan=1" class="quote-option__combo-btn" target="_blank" rel="noopener noreferrer">+ Add a service plan too &rarr;</a>
+      <div class="optpay">
+        <a href="https://buy.stripe.com/cNidR9c92dTrant7WW8bS0n" target="_blank" rel="noopener noreferrer"><img class="optpay__qr" src="assets/pay-option3-qr.svg" alt="Scan to pay Option 3 by card" width="170" height="170" /></a>
+        <div class="optpay__body">
+          <h4>Pay Option 3 in full by card</h4>
+          <div class="optpay__price">&pound;2,300.60</div>
+          <p>Debit or credit card, Apple Pay or Google Pay. Scan the QR code or tap below.</p>
+          <a class="paybtn" href="https://buy.stripe.com/cNidR9c92dTrant7WW8bS0n" target="_blank" rel="noopener noreferrer">Pay &pound;2,300.60 by card &rarr;</a>
+        </div>
+      </div>
 
       <p class="agreement-doc__footnote">*The warranty covers parts and labour for a repair to the boiler carried out by the manufacturer for the stated number of years from installation, provided the boiler is serviced once per year by a Gas Safe registered engineer.</p>
 

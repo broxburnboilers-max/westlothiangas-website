@@ -118,6 +118,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .quote-option__combo-btn:hover { background: #001b5e; color: #fff; }
 
+    .quote-pay {
+      display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+      background: #f4f7ff; border: 1px solid #d6e0ff; border-radius: 10px;
+      padding: 16px 18px; margin: -8px 0 26px;
+    }
+    .quote-pay__qr { width: 132px; height: 132px; background: #fff; border-radius: 8px; padding: 4px; flex: none; }
+    .quote-pay__text { flex: 1 1 220px; }
+    .quote-pay__text h5 { margin: 0 0 4px; font-size: 1rem; color: #001b5e; }
+    .quote-pay__text p { margin: 0 0 10px; font-size: 0.88rem; color: #3a4560; }
+    .quote-pay__btn {
+      display: inline-block; background: #001b5e; color: #fff; font-weight: 700; font-size: 0.9rem;
+      padding: 10px 18px; border-radius: 8px; text-decoration: none;
+    }
+    .quote-pay__btn:hover { background: #ff6b00; }
+    @media (max-width: 640px) { .quote-pay__qr { display: none; } }
+
     .agreement-doc__callout {
       background: #fff8ec; border: 1px solid #ffe1b0; border-radius: 10px;
       padding: 14px 16px; font-size: 0.92rem; color: #6b4a00; margin: 4px 0 20px;
@@ -292,6 +308,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p class="quote-option__warranty">7-year manufacturer warranty*</p>
       <a href="boiler-install-payment-plan-agreement.html?total=2567.40&boiler=Worcester%202000%2030kW" class="quote-option__finance-btn" target="_blank" rel="noopener noreferrer">Sign up to 0% finance for Option 2 &rarr;</a>
       <a href="boiler-install-payment-plan-agreement.html?total=2567.40&boiler=Worcester%202000%2030kW&addplan=1" class="quote-option__combo-btn" target="_blank" rel="noopener noreferrer">+ Add a service plan too &rarr;</a>
+      <div class="quote-pay">
+        <img class="quote-pay__qr" src="assets/pay-option2-qr.svg" alt="QR code to pay for Option 2 by card" width="132" height="132" />
+        <div class="quote-pay__text">
+          <h5>Pay Option 2 in full by card &mdash; &pound;2,567.40</h5>
+          <p>Pay securely by debit or credit card, Apple Pay or Google Pay through Stripe. On a computer, scan the QR code with your phone camera.</p>
+          <a href="https://buy.stripe.com/4gM4gzeha9Db5395OO8bS0m" class="quote-pay__btn" target="_blank" rel="noopener noreferrer">Pay &pound;2,567.40 by card &rarr;</a>
+        </div>
+      </div>
 
       <div class="quote-option" data-option="3">
         <div class="quote-option__body">

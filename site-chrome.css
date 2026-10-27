@@ -61,7 +61,7 @@
 
 .wlg-header__actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .wlg-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 18px; border-radius: 8px; font-weight: 800; font-size: 15px; text-decoration: none; font-family: var(--wlg-display); white-space: nowrap; border: 2px solid transparent; transition: background .15s, transform .15s; }
-.wlg-btn--accent { background: #c75400; color: #fff; box-shadow: 0 6px 16px rgba(199,84,0,.28); }
+.wlg-btn--accent { background: #c25100; color: #fff; box-shadow: 0 6px 16px rgba(194,81,0,.28); }
 .wlg-btn--accent:hover { background: #a94700; transform: translateY(-1px); }
 .wlg-btn--line { border-color: var(--wlg-navy); color: var(--wlg-navy); background: #fff; }
 .wlg-btn--line:hover { background: var(--wlg-blue-light); }

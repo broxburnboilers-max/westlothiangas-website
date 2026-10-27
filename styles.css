@@ -475,7 +475,7 @@ img {
 }
 
 .btn--primary {
-  background: #c75400; /* darker orange: white text passes WCAG AA contrast */
+  background: #c25100; /* darker orange: white text passes WCAG AA contrast */
   color: #fff;
 }
 

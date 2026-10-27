@@ -63,8 +63,8 @@
   background: #c25100; color: #fff; border-radius: 10px; padding: 15px 14px;
   font: 900 1rem/1.2 'Lato', sans-serif; transition: background 0.15s;
 }
-.fin-card__btn:hover, .fin-card__btn:focus-visible { background: #e05f00; color: #fff; }
-.fin-card__btn small { display: block; font-weight: 700; font-size: 0.8rem; opacity: 0.92; margin-top: 3px; }
+.fin-card__btn:hover, .fin-card__btn:focus-visible { background: #a94600; color: #fff; }
+.fin-card__btn small { display: block; font-weight: 700; font-size: 0.8rem; margin-top: 3px; }
 .fin-card__alt { display: block; text-align: center; margin-top: 10px; font-size: 0.88rem; font-weight: 700; color: #001b5e; }
 .fin-card__alt:hover { color: #c25100; }
 

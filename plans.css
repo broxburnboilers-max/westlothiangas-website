@@ -86,7 +86,7 @@
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: #e85d04;
+  background: #c25100;
   color: #fff;
   font-size: 0.75rem;
   font-weight: 900;
@@ -182,9 +182,9 @@
   box-sizing: border-box;
 }
 .plan-btn--primary {
-  background: #e85d04;
+  background: #c25100;
   color: #fff;
-  border: 2px solid #e85d04;
+  border: 2px solid #c25100;
 }
 .plan-btn--primary:hover { opacity: 0.88; }
 .plan-btn--outline {
@@ -198,7 +198,7 @@
 }
 .plan-btn--white {
   background: #fff;
-  color: #e85d04;
+  color: #c25100;
   border: 2px solid #fff;
   display: inline-block;
   width: auto;
@@ -297,7 +297,7 @@
 }
 .plans-offerbar__badge {
   background: #fff;
-  color: #e05f00;
+  color: #a94600;
   font-weight: 900;
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -409,7 +409,7 @@
   background: #c25100;
   color: #fff;
 }
-.plans-finance__btn:hover { background: #e05f00; }
+.plans-finance__btn:hover { background: #a94600; }
 .plans-finance__note {
   font-size: 0.82rem;
   color: #6b7a99;
@@ -528,7 +528,7 @@ details[open] .faq-item__q::after { content: "\2212"; }
 }
 
 .plans-cta {
-  background: #e85d04;
+  background: #c25100;
   padding: 56px 24px;
   text-align: center;
 }
@@ -541,7 +541,7 @@ details[open] .faq-item__q::after { content: "\2212"; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: rgba(255,255,255,0.75);
+  color: #fff;
   margin: 0 0 8px;
 }
 .plans-cta__text {
@@ -602,7 +602,7 @@ details[open] .faq-item__q::after { content: "\2212"; }
   max-width: 1000px;
   margin: 0 auto;
   background: #fff;
-  border: 3px solid #e85d04;
+  border: 3px solid #c25100;
   box-shadow: 0 12px 40px rgba(232, 93, 4, 0.35);
   border-radius: 16px;
   padding: 32px 36px;
@@ -614,7 +614,7 @@ details[open] .faq-item__q::after { content: "\2212"; }
 }
 .plans-quote-cta__badge {
   display: inline-block;
-  background: #e85d04;
+  background: #c25100;
   color: #fff;
   font-family: 'Lato', sans-serif;
   font-weight: 900;

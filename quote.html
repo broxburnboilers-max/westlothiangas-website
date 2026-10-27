@@ -18,30 +18,73 @@
   </style>
   <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "West Lothian Gas",
-    "image": "https://westlothiangas.com/assets/FullLogo_Transparent_NoBuffer.jpg",
-    "url": "https://westlothiangas.com/quote",
-    "telephone": "+44 7961 768920",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Broxburn",
-      "postalCode": "EH52 6FB",
-      "addressRegion": "West Lothian",
-      "addressCountry": "GB"
-    },
-    "areaServed": ["West Lothian", "Edinburgh", "Falkirk", "Broxburn", "Livingston", "Bathgate"],
-    "contactPoint": [{
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "West Lothian Gas",
+  "image": "https://westlothiangas.com/assets/FullLogo_Transparent_NoBuffer.jpg",
+  "url": "https://westlothiangas.com/quote",
+  "telephone": "+44 7961 768920",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Broxburn",
+    "postalCode": "EH52 6FB",
+    "addressRegion": "West Lothian",
+    "addressCountry": "GB"
+  },
+  "areaServed": [
+    "West Lothian",
+    "Edinburgh",
+    "Falkirk",
+    "Broxburn",
+    "Livingston",
+    "Bathgate"
+  ],
+  "contactPoint": [
+    {
       "@type": "ContactPoint",
       "telephone": "+44 7961 768920",
       "contactType": "customer service",
+      "name": "Mobile and WhatsApp",
       "areaServed": "GB",
-      "availableLanguage": "en"
-    }]
-  }
-  </script>
+      "availableLanguage": "en-GB"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+44 131 581 8509",
+      "contactType": "customer service",
+      "name": "Edinburgh office",
+      "areaServed": "GB",
+      "availableLanguage": "en-GB"
+    }
+  ],
+  "@id": "https://westlothiangas.com/#localbusiness",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 55.9369,
+    "longitude": -3.4835
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    }
+  ],
+  "sameAs": [
+    "https://maps.app.goo.gl/g2nj5gkCVcGfVL1T6"
+  ]
+}
+</script>
   <style>
     /* Quote landing page specific styles */
     .quote-hero {

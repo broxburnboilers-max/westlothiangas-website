@@ -654,7 +654,7 @@
   </nav>
   <script src="/site-chrome.js" defer></script>
   <!-- ===== /Site chrome footer ===== -->
-  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script>var yr=document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();</script>
   <!-- Silent form for Netlify click notifications -->
 <form name="plan-clicks" netlify netlify-honeypot="bot-field" hidden>
   <input type="hidden" name="plan" />

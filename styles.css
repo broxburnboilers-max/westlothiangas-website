@@ -475,12 +475,12 @@ img {
 }
 
 .btn--primary {
-  background: var(--accent);
+  background: #c75400; /* darker orange: white text passes WCAG AA contrast */
   color: #fff;
 }
 
 .btn--primary:hover {
-  background: #e45f00;
+  background: #a94700;
 }
 
 .btn--outline {

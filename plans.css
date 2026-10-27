@@ -288,7 +288,7 @@
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
-  background: linear-gradient(90deg, #ff6b00, #ff8c1a);
+  background: linear-gradient(90deg, #c25100, #a94600);
   color: #fff;
   text-decoration: none;
   padding: 12px 20px;
@@ -328,7 +328,7 @@
   max-width: 760px;
   margin: 0 auto;
   background: #fff7f0;
-  border: 2px solid #ff6b00;
+  border: 2px solid #c25100;
   border-radius: 16px;
   padding: 40px 36px;
   text-align: center;
@@ -355,7 +355,7 @@
 }
 .plans-finance__badge {
   display: inline-block;
-  background: #ff6b00;
+  background: #c25100;
   color: #fff;
   font-size: 0.75rem;
   font-weight: 900;
@@ -399,14 +399,14 @@
   content: "\2713";
   position: absolute;
   left: 0;
-  color: #ff6b00;
+  color: #c25100;
   font-weight: 900;
 }
 .plans-finance__btn {
   display: inline-block;
   width: auto;
   padding: 14px 32px;
-  background: #ff6b00;
+  background: #c25100;
   color: #fff;
 }
 .plans-finance__btn:hover { background: #e05f00; }

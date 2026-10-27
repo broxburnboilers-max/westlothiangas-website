@@ -9,13 +9,13 @@
 .wl-inner { max-width: var(--max-w); margin: 0 auto; }
 
 /* ---------- Trust badges strip (under hero) ---------- */
-.trust-badges { background: linear-gradient(90deg, #ff6b00, #ff8c00); color: #fff; padding: 18px 20px; }
+.trust-badges { background: linear-gradient(90deg, #c25100, #a94600); color: #fff; padding: 18px 20px; }
 .trust-badges__inner { max-width: var(--max-w); margin: 0 auto; display: grid; gap: 14px; }
 .trust-badges__lead { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; text-align: center; }
 .trust-badges__lead p { margin: 0; font-weight: 700; font-size: 1.05rem; }
 .trust-badges__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .trust-badges__list li { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); border-radius: 10px; padding: 10px 12px 10px 38px; position: relative; font-weight: 700; font-size: .96rem; line-height: 1.35; }
-.trust-badges__list li::before { content: "✓"; position: absolute; left: 12px; top: 9px; width: 18px; height: 18px; border-radius: 50%; background: #fff; color: #ff6b00; font-size: 12px; display: grid; place-items: center; font-weight: 900; }
+.trust-badges__list li::before { content: "✓"; position: absolute; left: 12px; top: 9px; width: 18px; height: 18px; border-radius: 50%; background: #fff; color: #c25100; font-size: 12px; display: grid; place-items: center; font-weight: 900; }
 
 /* service card links */
 .service-card { display: flex; flex-direction: column; }
@@ -44,7 +44,7 @@
 .plans-teaser__extra:hover { transform: translateY(-3px); }
 .plans-teaser__extra strong { font-family: var(--font-display); font-size: 1.08rem; }
 .plans-teaser__extra > span:last-child { color: rgba(255,255,255,.82); font-size: .95rem; }
-.plans-teaser__extra--finance { background: linear-gradient(135deg, #ff6b00, #ff8c3a); }
+.plans-teaser__extra--finance { background: linear-gradient(135deg, #c25100, #a94600); }
 .plans-teaser__extra--finance .boiler-banner__badge { background: var(--navy); }
 
 /* ---------- Areas ---------- */
@@ -190,12 +190,12 @@ a.wl-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); bor
 }
 
 /* Homepage: pay-by-card strip */
-.paystrip { background: #001b5e; padding: 26px 20px; border-top: 4px solid #ff6b00; border-bottom: 4px solid #ff6b00; }
+.paystrip { background: #001b5e; padding: 26px 20px; border-top: 4px solid #c25100; border-bottom: 4px solid #c25100; }
 .paystrip__inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.paystrip__badge { display: inline-block; background: #ff6b00; color: #fff; font: 900 .75rem/1 'Lato', sans-serif; letter-spacing: .08em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; }
+.paystrip__badge { display: inline-block; background: #c25100; color: #fff; font: 900 .75rem/1 'Lato', sans-serif; letter-spacing: .08em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; }
 .paystrip__title { color: #fff; font: 900 1.6rem/1.2 'Lato', sans-serif; margin: 10px 0 6px; }
 .paystrip__sub { color: #dfe6ff; margin: 0; font-size: 1rem; max-width: 620px; }
-.paystrip__btn { flex: none; display: block; text-align: center; text-decoration: none; background: #ff6b00; color: #fff; border-radius: 12px; padding: 16px 30px; font: 900 1.25rem/1.2 'Lato', sans-serif; box-shadow: 0 8px 22px rgba(255,107,0,.4); }
+.paystrip__btn { flex: none; display: block; text-align: center; text-decoration: none; background: #c25100; color: #fff; border-radius: 12px; padding: 16px 30px; font: 900 1.25rem/1.2 'Lato', sans-serif; box-shadow: 0 8px 22px rgba(255,107,0,.4); }
 .paystrip__btn:hover, .paystrip__btn:focus-visible { background: #e05f00; color: #fff; }
 .paystrip__btn small { display: block; font-weight: 700; font-size: .82rem; margin-top: 4px; opacity: .92; }
 @media (max-width: 760px) { .paystrip__inner { flex-direction: column; align-items: stretch; text-align: center; } .paystrip__title { font-size: 1.35rem; } }

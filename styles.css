@@ -3,7 +3,7 @@
   --blue: #0070c9;
   --blue-mid: #005ea6;
   --blue-light: #e8f2fb;
-  --accent: #ff6b00;
+  --accent: #c25100;
   --green: #00a651;
   --white: #ffffff;
   --off-white: #f4f7fa;
@@ -25,7 +25,7 @@
 /* Boiler installation promo banner — top-of-site, high-visibility CTA */
 .boiler-banner {
   display: block;
-  background: linear-gradient(90deg, var(--accent) 0%, #ff8c3a 50%, var(--accent) 100%);
+  background: linear-gradient(90deg, var(--accent) 0%, #a94600 50%, var(--accent) 100%);
   background-size: 200% 100%;
   text-decoration: none;
   animation: boiler-banner-sheen 5s ease-in-out infinite;
@@ -504,7 +504,7 @@ img {
 }
 
 .offer-banner {
-  background: linear-gradient(90deg, #ff6b00, #ff8c00);
+  background: linear-gradient(90deg, #c25100, #a94600);
   color: #fff;
   padding: 14px 20px;
 }

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 30 200 250" width="200" height="250">
+<defs>
+ <linearGradient id="blue" x1="0" y1="0" x2="0.6" y2="1">
+  <stop offset="0" stop-color="#2ED3E6"/><stop offset="1" stop-color="#3D63E8"/></linearGradient>
+ <linearGradient id="green" x1="0" y1="0" x2="0.3" y2="1">
+  <stop offset="0" stop-color="#B5DE3E"/><stop offset="1" stop-color="#5DB534"/></linearGradient>
+</defs>
+<!-- blue water drop body -->
+<path d="M112,48 C80,98 46,140 46,188 C46,232 78,262 116,262 C150,262 176,240 182,210
+         C168,236 146,248 122,248 C88,248 66,222 66,190 C66,150 92,112 112,48 Z" fill="url(#blue)"/>
+<!-- green flame -->
+<path d="M112,48 C104,90 86,128 86,176 C86,150 100,128 112,108 C114,130 132,140 132,164
+         C144,150 146,132 142,116 C166,140 182,166 182,200 C182,226 170,246 150,258
+         C178,252 200,228 200,194 C200,140 152,108 112,48 Z" fill="url(#green)"/>
+<!-- white circle with blue ring -->
+<circle cx="126" cy="200" r="38" fill="#ffffff"/>
+<path d="M163.6,186.3 A40,40 0 0 1 95.4,225.7" fill="none" stroke="#3D63E8" stroke-width="7" stroke-linecap="round"/>
+<!-- plus -->
+<path d="M117,178 h18 v13 h13 v18 h-13 v13 h-18 v-13 h-13 v-18 h13 z" fill="#6CBF2E"/>
+</svg>

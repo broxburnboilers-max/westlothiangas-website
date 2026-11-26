@@ -1,0 +1,29 @@
+/* Worcester Bosch accreditation + 0% finance badges */
+.wb-strip { background: #fff; border-top: 1px solid #d9e3ee; border-bottom: 1px solid #d9e3ee; }
+.wb-strip__inner { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; }
+.wb-strip__logo { display: block; width: 210px; height: auto; }
+.wb-strip__text h2 { margin: 0 0 6px; font-size: 1.45rem; line-height: 1.2; color: #001b5e; }
+.wb-strip__text p { margin: 0 0 12px; color: #33405e; }
+.wb-strip__cta { display: inline-block; background: #c25100; color: #fff; font-weight: 700; padding: 11px 20px; border-radius: 8px; text-decoration: none; }
+.wb-strip__cta:hover { background: #a94600; }
+.wb-strip__fin { display: flex; align-items: center; gap: 14px; }
+.wb-strip__roundel { width: 118px; height: auto; }
+.wb-strip__boiler { width: 74px; height: auto; }
+@media (max-width: 860px) {
+  .wb-strip__inner { grid-template-columns: 1fr; text-align: center; gap: 18px; }
+  .wb-strip__logo { margin: 0 auto; width: 180px; }
+  .wb-strip__fin { justify-content: center; }
+}
+.wb-hero-badge { display: block; width: 100%; max-width: 380px; height: auto; margin: 14px 0 18px; background: #fff; padding: 10px 14px; border-radius: 8px; box-sizing: border-box; }
+/* Finance section */
+.fin__showcase { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; background: #fff; border-radius: 14px; padding: 18px 22px; margin: 0 0 22px; }
+.fin__range { width: 100%; max-width: 560px; height: auto; display: block; margin: 0 auto; }
+.fin__badges { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.fin__roundel { width: 140px; height: auto; }
+.fin__wb { width: 150px; height: auto; }
+.fin-card__img { display: block; height: 170px; width: auto; margin: 4px auto 10px; }
+@media (max-width: 760px) {
+  .fin__showcase { grid-template-columns: 1fr; }
+  .fin__badges { flex-direction: row; justify-content: center; }
+  .fin__roundel { width: 100px; } .fin__wb { width: 120px; }
+}

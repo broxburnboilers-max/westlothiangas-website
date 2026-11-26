@@ -180,3 +180,6 @@
 @media (max-width: 1440px) { .wlg-topbar__contact .wlg-topbar__email { display: none; } }
 @media (max-width: 720px) { .wlg-topbar__contact a:not(.wlg-topbar__phone) { display: none; } .wlg-topbar .wlg-wrap { flex-wrap: nowrap; font-size: 13px; } }
 @media (max-width: 1440px) { .wlg-topbar__trust li:nth-child(4) { display: none; } }
+/* Full vector logo in header */
+.wlg-brand img.wlg-brand__full { width: auto; height: 60px; }
+@media (max-width: 900px) { .wlg-brand img.wlg-brand__full { width: auto; height: 46px; } }

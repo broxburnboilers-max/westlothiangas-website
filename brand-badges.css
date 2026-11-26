@@ -32,4 +32,5 @@
 .hero__sticker { position: absolute; top: -34px; right: -34px; width: 140px; z-index: 3; transform: rotate(45deg); transition: transform .2s ease; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
 .hero__sticker:hover { transform: rotate(45deg) scale(1.05); }
 .hero__sticker img { display: block; width: 100%; height: auto; }
+@media (max-width: 1240px) { .hero__sticker { right: -8px; } }
 @media (max-width: 900px) { .hero__sticker { width: 100px; top: -18px; right: -10px; } }
